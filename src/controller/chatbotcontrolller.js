@@ -4,6 +4,9 @@ import chatbotService from "../services/chatbotService";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
+const url_img1 =
+  "https://i.pinimg.com/originals/4f/cb/82/4fcb82683ba45f0c47aab945a11a990c.png";
+
 // let postWebHook = (req, res) => {
 let postWebhook = (req, res) => {
   // Parse the request body from the POST
@@ -74,7 +77,7 @@ function handleMessage(sender_psid, received_message) {
     };
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
-    let attachment_url = received_message.attachments[0].payload.url;
+    let attachment_url = url_img1; // received_message.attachments[0].payload.url;
     response = {
       attachment: {
         type: "template",
@@ -100,7 +103,7 @@ function handleMessage(sender_psid, received_message) {
                   type: "postback",
                   title: "Đoán xem ",
                   payload: "maybe",
-                }
+                },
               ],
             },
           ],
@@ -131,7 +134,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
       break;
-      case "maybe":
+    case "maybe":
       response = { text: "Đoán qq" };
       break;
     // case "yes":
