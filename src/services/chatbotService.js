@@ -34,7 +34,7 @@ let handleGetStarted = () => {
   return Promise(async(resole, reject) => {
     try {
         response = { text: "Hello :), started rồi đó." };
-        await this.callSendAPI(response);
+        await callSendAPI(response);
         resole('done');
     } catch (error) {
         reject(e);
