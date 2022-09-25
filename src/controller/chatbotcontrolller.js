@@ -115,14 +115,34 @@ function handlePostback(sender_psid, received_postback) {
   let payload = received_postback.payload;
 
   // Set the response based on the postback payload
-  if (payload === "yes") {
-    response = { text: "OK :)" };
-  } else if (payload === "no") {
-    response = { text: "Vậy gửi lại đi nhấn chi nữa." };
+
+  switch (payload) {
+    case "yes":
+      response = { text: "OK :)" };
+      break;
+    case "no":
+      response = { text: "Vậy gửi lại đi nhấn chi nữa." };
+      break;
+    case "GET_STARTED":
+      response = { text: "Hello :), started rồi đó." };
+      break;
+    // case "yes":
+    // response = { text: "OK :)" };
+    // break;
+
+    default:
+      response = { text: "Oop :), default " };
+      break;
   }
-  else if (payload === "GET_STARTED") {
-    response = { text: "Hello :), started rồi đó." };
-  }
+
+  // if (payload === "yes") {
+
+  // } else if (payload === "no") {
+  //   response = { text: "Vậy gửi lại đi nhấn chi nữa." };
+  // }
+  // else if (payload === "GET_STARTED") {
+  //   response = { text: "Hello :), started rồi đó." };
+  // }
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 }
@@ -161,7 +181,7 @@ let setupProfile = async (req, res) => {
     whitelisted_domains: ["https://chatbotlan2.herokuapp.com/"],
   };
   // Send the HTTP request to the Messenger Platform
-   await request(
+  await request(
     {
       uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
       qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -177,7 +197,7 @@ let setupProfile = async (req, res) => {
       }
     }
   );
-  return res.send("OK chào bạn :)")
+  return res.send("OK chào bạn :)");
 };
 
 module.exports = {
