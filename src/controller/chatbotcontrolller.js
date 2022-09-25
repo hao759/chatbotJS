@@ -96,6 +96,11 @@ function handleMessage(sender_psid, received_message) {
                   title: "Éo :v",
                   payload: "no",
                 },
+                {
+                  type: "postback",
+                  title: "Đoán xem ",
+                  payload: "maybe",
+                }
               ],
             },
           ],
@@ -125,7 +130,9 @@ async function handlePostback(sender_psid, received_postback) {
       break;
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-
+      break;
+      case "maybe":
+      response = { text: "Đoán qq" };
       break;
     // case "yes":
     // response = { text: "OK :)" };
@@ -135,15 +142,6 @@ async function handlePostback(sender_psid, received_postback) {
       response = { text: "Oop :), default " };
       break;
   }
-
-  // if (payload === "yes") {
-
-  // } else if (payload === "no") {
-  //   response = { text: "Vậy gửi lại đi nhấn chi nữa." };
-  // }
-  // else if (payload === "GET_STARTED") {
-  //   response = { text: "Hello :), started rồi đó." };
-  // }
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 }

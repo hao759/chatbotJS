@@ -14,14 +14,12 @@ let initWebRoute = (app) => {
   //   res.render("test.ejs");
   // });
 
-  router.post("/setup_profile",chatbotController.setupProfile);
+  router.post("/setup_profile", chatbotController.setupProfile);
 
   router.get("/webhook", chatbotController.getWebHook);
   router.post("/webhook", chatbotController.postWebhook);
 
   return app.use("/", router);
 };
-
-
 
 module.exports = initWebRoute;

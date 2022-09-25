@@ -1,5 +1,5 @@
 require("dotenv").config();
-import { response } from "express";
+// import { response } from "express";
 import request from "request";
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
@@ -44,14 +44,6 @@ let handleGetStarted = (sender_psid) => {
 };
 
 let getUserName = (sender_psid) => {
-  // let userName= "";
-  // let request_body = {
-  //     recipient: {
-  //       id: sender_psid,
-  //     },
-  //     message: response,
-  //   };
-  // Send the HTTP request to the Messenger Platform
   return new Promise((resole, reject) => {
     request(
       {
@@ -60,8 +52,8 @@ let getUserName = (sender_psid) => {
       },
       (err, res, body) => {
         if (!err) {
-           body = JSON.parse(body);
-         let userName = `${body.last_name} ${body.first_name} `;
+          body = JSON.parse(body);
+          let userName = `${body.last_name} ${body.first_name} `;
           resole(userName);
         } else {
           console.error("Unable to send message:" + err);
