@@ -5,7 +5,7 @@ import request from "request";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-let callSendAPI = (res) => {
+let callSendAPI = (sender_psid,res) => {
   let request_body = {
     recipient: {
       id: sender_psid,
@@ -30,11 +30,11 @@ let callSendAPI = (res) => {
   );
 };
 
-let handleGetStarted = () => {
-  return Promise(async(resole, reject) => {
+let handleGetStarted = (sender_psid) => {
+  return new Promise(async(resole, reject) => {
     try {
         response = { text: "Hello :), started rồi đó." };
-        await callSendAPI(response);
+        await callSendAPI(sender_psid,response);
         resole('done');
     } catch (error) {
         reject(e);
