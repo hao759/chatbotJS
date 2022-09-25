@@ -116,9 +116,8 @@ function handlePostback(sender_psid, received_postback) {
 
   // Set the response based on the postback payload
   if (payload === "yes") {
-    response = { text: "OK !" };
+    response = { text: "OK :)" };
   } else if (payload === "no") {
-    
     response = { text: "Vậy gửi lại đi nhấn chi nữa." };
   }
   // Send the message to acknowledge the postback
@@ -152,8 +151,35 @@ function callSendAPI(sender_psid, response) {
   );
 }
 
+let setupProfile = async (req, res) => {
+  //call profile api facebook
+  let request_body = {
+    get_started: { payload: "GET_STARTED" },
+    whitelisted_domains: ["https://chatbotlan2.herokuapp.com/"],
+  };
+  // Send the HTTP request to the Messenger Platform
+   await request(
+    {
+      uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
+      qs: { access_token: PAGE_ACCESS_TOKEN },
+      method: "POST",
+      json: request_body,
+    },
+    (err, res, body) => {
+      console.log(body);
+      if (!err) {
+        console.log("setup user profile succeed!");
+      } else {
+        console.error("Unable to send message:" + err);
+      }
+    }
+  );
+  return res.send("OK chào bạn :)")
+};
+
 module.exports = {
   getHomePage,
   getWebHook,
   postWebhook,
+  setupProfile,
 };
