@@ -70,7 +70,7 @@ function handleMessage(sender_psid, received_message) {
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
     response = {
-      text: `"${received_message.text}" chi mày, gửi tao cái ảnh thử đi :) `,
+      text: `"${received_message.text}" chi mày, gửi tao cái ảnh thử đi  :* `,
     };
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
@@ -82,18 +82,18 @@ function handleMessage(sender_psid, received_message) {
           template_type: "generic",
           elements: [
             {
-              title: "Mày mới gửi cái hình này á hả?",
-              subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu.",
+              title: "Mày mới gửi cái hình này á hả? >.<",
+              subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
               image_url: attachment_url,
               buttons: [
                 {
                   type: "postback",
-                  title: "Ukm ;))",
+                  title: "Ukm ;)",
                   payload: "yes",
                 },
                 {
                   type: "postback", //chạy vo ham handlePostBack
-                  title: "Éo -^_^-",
+                  title: "Éo :v",
                   payload: "no",
                 },
               ],
@@ -118,10 +118,10 @@ async function handlePostback(sender_psid, received_postback) {
 
   switch (payload) {
     case "yes":
-      response = { text: "OK :)" };
+      response = { text: "OK <3" };
       break;
     case "no":
-      response = { text: "Vậy gửi lại đi nhấn chi nữa." };
+      response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
       break;
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
