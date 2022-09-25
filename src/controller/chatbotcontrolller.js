@@ -4,8 +4,8 @@ import chatbotService from "../services/chatbotService";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-const url_img1 =
-  "https://i.pinimg.com/originals/4f/cb/82/4fcb82683ba45f0c47aab945a11a990c.png";
+const url_img1 = "https://bit.ly/Miku001";
+const url_img2 = "https://bit.ly/chibisutu";
 
 // let postWebHook = (req, res) => {
 let postWebhook = (req, res) => {
@@ -116,6 +116,21 @@ function handleMessage(sender_psid, received_message) {
   callSendAPI(sender_psid, response);
 }
 
+let sendImage=(sender_psid)=>{
+  response={
+    "message":{
+      "attachment":{
+        "type":"image", 
+        "payload":{
+          "is_reusable": true,
+          "url":"url_img2"
+        }
+      }
+    }
+  }
+  callSendAPI(sender_psid, response);
+}
+
 // Handles messaging_postbacks events
 async function handlePostback(sender_psid, received_postback) {
   let response;
@@ -128,15 +143,20 @@ async function handlePostback(sender_psid, received_postback) {
     case "yes":
       response = { text: "OK <3" };
       break;
+
     case "no":
       response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
       break;
+
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
+      sendImage(sender_psid);
       break;
+
     case "maybe":
       response = { text: "Đoán qq" };
       break;
+
     // case "yes":
     // response = { text: "OK :)" };
     // break;
