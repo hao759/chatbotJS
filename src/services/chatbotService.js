@@ -179,7 +179,7 @@ let sendImage = (sender_psid) => {
          "is_reusable":true
        }
      }
-   },
+   }
  
  return response;
 };
