@@ -115,6 +115,11 @@ function handleMessage(sender_psid, received_message) {
                   title: "MAIN_MENU",
                   payload: "MAIN_MENU",
                 },
+                {
+                  "type": "postback",
+                  "title": "Khởi động lại bot",
+                  "payload": "Restart"
+              },
 
               ],
             }

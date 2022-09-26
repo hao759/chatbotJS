@@ -5,12 +5,9 @@ import request from "request";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-
-
-const url_img2 = "https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-chibi-de-thuong-nhat_022624992.jpg";
+const url_img2 =
+  "https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-chibi-de-thuong-nhat_022624992.jpg";
 // const url_img2 = "https://bit.ly/chibisutu";
-
-
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -42,7 +39,7 @@ let handleGetStarted = (sender_psid) => {
     try {
       let userName = await getUserName(sender_psid);
       let response = { text: `Hello ${userName} :), started rồi đó.` };
-      let response1=sendImage(sender_psid);
+      let response1 = sendImage(sender_psid);
       await callSendAPI(sender_psid, response);
       console.log("------------------------------------------");
       await callSendAPI(sender_psid, response1);
@@ -73,17 +70,17 @@ let getUserName = (sender_psid) => {
   });
 };
 
-let handleSendMenu=(sender_psid)=>{
+let handleSendMenu = (sender_psid) => {
   return new Promise(async (resole, reject) => {
     try {
-      let response =  getMainMenuTemplate();
+      let response = getMainMenuTemplate();
       await callSendAPI(sender_psid, response);
       resole("done");
     } catch (error) {
       reject(error);
     }
   });
-}
+};
 // let getStartedTemplete=()=>{
 //   let response = {
 //     attachment: {
@@ -119,7 +116,7 @@ let handleSendMenu=(sender_psid)=>{
 //   };
 // }
 
-let getMainMenuTemplate=()=>{
+let getMainMenuTemplate = () => {
   let response = {
     attachment: {
       type: "template",
@@ -141,7 +138,6 @@ let getMainMenuTemplate=()=>{
                 title: "Éo :v",
                 payload: "no",
               },
-              
             ],
           },
           {
@@ -159,7 +155,6 @@ let getMainMenuTemplate=()=>{
                 title: "Éo :v",
                 payload: "no",
               },
-              
             ],
           },
         ],
@@ -167,25 +162,25 @@ let getMainMenuTemplate=()=>{
     },
   };
   return response;
-}
+};
 
 let sendImage = (sender_psid) => {
   let response = {
-  //  message: {
-     "attachment":{
-       "type":"image", 
-       "payload":{
-         "url":url_img2, 
-         "is_reusable":true
-       }
-     }
-   }
- 
- return response;
+    //  message: {
+    attachment: {
+      type: "image",
+      payload: {
+        url: url_img2,
+        is_reusable: true,
+      },
+    },
+  };
+
+  return response;
 };
 
 module.exports = {
   handleGetStarted,
   callSendAPI,
-  handleSendMenu
+  handleSendMenu,
 };
