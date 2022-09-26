@@ -44,10 +44,11 @@ let handleGetStarted = (sender_psid) => {
     try {
       let userName = await getUserName(sender_psid);
       let response = { text: `Hello ${userName} :), started rồi đó.` };
-      let response1 = sendImage(sender_psid);
+      // let response1 = sendImage(sender_psid);
       let response2 = sendGIF();
+
       await callSendAPI(sender_psid, response);
-      await callSendAPI(sender_psid, response1);
+      // await callSendAPI(sender_psid, response1);
       await callSendAPI(sender_psid, response2);
 
       resole("done");
@@ -233,4 +234,5 @@ module.exports = {
   handleGetStarted,
   callSendAPI,
   handleSendMenu,
+  sendImage,
 };
