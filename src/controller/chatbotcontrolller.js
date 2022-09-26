@@ -77,7 +77,7 @@ function handleMessage(sender_psid, received_message) {
     };
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
-    let attachment_url = url_img1; // received_message.attachments[0].payload.url;
+    let attachment_url =  received_message.attachments[0].payload.url;
     response = {
       attachment: {
         type: "template",
@@ -87,7 +87,7 @@ function handleMessage(sender_psid, received_message) {
             {
               title: "Mày mới gửi cái hình này á hả? >.<",
               subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
-              image_url: attachment_url,
+              image_url: url_img1,
               buttons: [
                 {
                   type: "postback",
@@ -109,7 +109,7 @@ function handleMessage(sender_psid, received_message) {
             {
               title: "Hay này hả? >.<",
               subtitle: "Không có gì T_T",
-              image_url: attachment_url,//ko dc received_message.attachments[0],
+              image_url: attachment_url,
               buttons: [
                 {
                   type: "postback", //chạy vo ham handlePostBack

@@ -140,6 +140,24 @@ let getMainMenuTemplate=()=>{
               
             ],
           },
+          {
+            title: "Chao ban. Day la getMainMenuTemplate2",
+            subtitle: "getMainMenuTemplate",
+            image_url: url_img2,
+            buttons: [
+              {
+                type: "postback",
+                title: "Ukm ;)",
+                payload: "yes",
+              },
+              {
+                type: "postback", //chạy vo ham handlePostBack
+                title: "Éo :v",
+                payload: "no",
+              },
+              
+            ],
+          },
         ],
       },
     },
