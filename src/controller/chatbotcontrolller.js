@@ -118,14 +118,10 @@ function handleMessage(sender_psid, received_message) {
                 },
                 {
                   type: "postback", //chạy vo ham handlePostBack
-                  title: "Éo :v",
-                  payload: "no",
+                  title: "MAIN_MENU",
+                  payload: "MAIN_MENU",
                 },
-                {
-                  type: "postback",
-                  title: "Đoán xem ",
-                  payload: "maybe",
-                },
+
               ],
             }
           ],
