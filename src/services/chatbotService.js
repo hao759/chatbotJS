@@ -45,9 +45,10 @@ let handleGetStarted = (sender_psid) => {
     try {
       let userName = await getUserName(sender_psid);
       let response;
-      if (userName!=undefined)
+      if (userName)
         response = { text: `Hello ${userName} :), started rồi đó.` };
-      else response = { text: `Hello bạn :), started rồi đó.` };
+      else 
+      response = { text: `Hello bạn :), started rồi đó.` };
       // let response1 = sendImage(sender_psid);
       let response2 = sendGIF();
 
