@@ -69,7 +69,6 @@ let getWebHook = (req, res) => {
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
   let response;
-  // Checks if the message contains text
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
     response = {
@@ -141,7 +140,28 @@ let sendImage =  (sender_psid) => {
       },
     },
   };
-  callSendAPI(sender_psid, response);
+  let request_body = {
+    recipient: {
+      id: sender_psid,
+    },
+    message: response,
+  };
+  // Send the HTTP request to the Messenger Platform
+  request(
+    {
+      uri: `https://graph.facebook.com/v2.6/me/message_attachments?access_token=${PAGE_ACCESS_TOKEN}`,
+      qs: { access_token: PAGE_ACCESS_TOKEN },
+      method: "POST",
+      json: request_body,
+    },
+    (err, res, body) => {
+      if (!err) {
+        console.log("message sent!");
+      } else {
+        console.error("Unable to send message:" + err);
+      }
+    }
+  );
 };
 
 // Handles messaging_postbacks events
@@ -163,7 +183,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      // sendImage(sender_psid);
+       sendImage(sender_psid);
       break;
 
     case "maybe":
