@@ -185,7 +185,7 @@ let sendImage = (sender_psid) => {
     attachment: {
       type: "image",
       payload: {
-        url: url_img2,
+        url: "https://www.facebook.com/P.1500.Monster/videos/824824665207473",//url_img2,
         is_reusable: true,
       },
     },
@@ -194,23 +194,23 @@ let sendImage = (sender_psid) => {
   return response;
 };
 
-// let SendButton_Template = () => {
-//   let response = {
-//     attachment: {
-//       type: "template",
-//       payload: {
-//         template_type: "media",
-//         elements: [
-//           {
-//             media_type: "<video>",
-//             url: Gif1,
-//           },
-//         ],
-//       },
-//     },
-//   };
-//   return response;
-// };
+let SendButton_Template = () => {
+  let response = {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "<video>",
+            url: Gif1,
+          },
+        ],
+      },
+    },
+  };
+  return response;
+};
 
 module.exports = {
   handleGetStarted,
