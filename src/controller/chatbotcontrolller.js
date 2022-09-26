@@ -71,9 +71,33 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
-    response = {
-      text: `"${received_message.text}" chi mày, gửi tao cái ảnh thử đi  :* `,
-    };
+    // response = {
+    //   text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
+    // };
+    switch (received_message.text) {
+      case "cc":
+        response = {
+          text: `Cút  :* `,
+        };
+        break;
+      case "alo":
+        response = {
+          text: `Gì nói đại đi lô lô :* `,
+        };
+        break;
+      case "e":
+      case ".":
+        response = {
+          text: `${received_message.text} qq  :* `,
+        };
+        break;
+
+      default:
+        response = {
+          text: `Ơ :* `,
+        };
+        break;
+    }
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
     let attachment_url = received_message.attachments[0].payload.url;
