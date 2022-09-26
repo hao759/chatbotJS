@@ -116,20 +116,20 @@ function handleMessage(sender_psid, received_message) {
   callSendAPI(sender_psid, response);
 }
 
-let sendImage=(sender_psid)=>{
-  let response={
-    "message":{
-      "attachment":{
-        "type":"image", 
-        "payload":{
-          "is_reusable": true,
-          "url":url_img2
-        }
-      }
-    }
-  }
+let sendImage = (sender_psid) => {
+  let response = {
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          is_reusable: true,
+          url: url_img2,
+        },
+      },
+    },
+  };
   callSendAPI(sender_psid, response);
-}
+};
 
 // Handles messaging_postbacks events
 async function handlePostback(sender_psid, received_postback) {
@@ -147,10 +147,10 @@ async function handlePostback(sender_psid, received_postback) {
     case "no":
       response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
       break;
-
+    case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      sendImage(sender_psid);
+      // sendImage(sender_psid);
       break;
 
     case "maybe":
@@ -221,10 +221,51 @@ let setupProfile = async (req, res) => {
   );
   return res.send("OK chào bạn :)");
 };
+let setupPersistent=async (req,res)=>{
+  let request_body = {
+    "persistent_menu": [
+          {
+              "locale": "default",
+              "composer_input_disabled": false,
+              "call_to_actions": [
+                  {
+                      "type": "postback",
+                      "title": "Khởi động lại bot",
+                      "payload": "Restart"
+                  },
+                  {
+                      "type": "web_url",
+                      "title": "Shop now",
+                      "url": "https://www.originalcoastclothing.com/",
+                      "webview_height_ratio": "full"
+                  }
+              ]
+          }
+      ]
+  };
+  // Send the HTTP request to the Messenger Platform
+  await request(
+    {
+      uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
+      qs: { access_token: PAGE_ACCESS_TOKEN },
+      method: "POST",
+      json: request_body,
+    },
+    (err, res, body) => {
+      console.log(body);
+      if (!err) {
+        console.log("setup persist profile succeed!");
+      } else {
+        console.error("Unable to send message:" + err);
+      }
+    }
+  );
+}
 
 module.exports = {
   getHomePage,
   getWebHook,
   postWebhook,
   setupProfile,
+  setupPersistent
 };

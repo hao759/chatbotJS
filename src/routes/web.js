@@ -15,6 +15,8 @@ let initWebRoute = (app) => {
   // });
 
   router.post("/setup_profile", chatbotController.setupProfile);
+  
+  router.post("/setup_persistent_menu", chatbotController.setupPersistent);
 
   router.get("/webhook", chatbotController.getWebHook);
   router.post("/webhook", chatbotController.postWebhook);
