@@ -164,13 +164,13 @@ let getMainMenuTemplate = () => {
             subtitle: "Mega Lucario",
             image_url:
               "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
-            buttons: [
-              {
-                type: "postback",
-                title: "Ukm ;)",
-                payload: "yes",
-              },
-            ],
+            // buttons: [
+            //   {
+            //     type: "postback",
+            //     title: "Ukm ;)",
+            //     payload: "yes",
+            //   },
+            // ],
           },
         ],
       },
