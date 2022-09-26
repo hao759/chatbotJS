@@ -44,6 +44,7 @@ let handleGetStarted = (sender_psid) => {
       let response = { text: `Hello ${userName} :), started rồi đó.` };
       let response1=sendImage(sender_psid);
       await callSendAPI(sender_psid, response);
+      console.log("------------------------------------------");
       await callSendAPI(sender_psid, response1);
       resole("done");
     } catch (error) {
@@ -170,7 +171,7 @@ let getMainMenuTemplate=()=>{
 
 let sendImage = (sender_psid) => {
   let response = {
-   message: {
+  //  message: {
      "attachment":{
        "type":"image", 
        "payload":{
@@ -179,7 +180,7 @@ let sendImage = (sender_psid) => {
        }
      }
    },
- };
+ 
  return response;
 };
 
