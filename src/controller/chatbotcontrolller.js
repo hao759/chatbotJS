@@ -107,9 +107,9 @@ function handleMessage(sender_psid, received_message) {
               ],
             },
             {
-              title: "Mày mới gửi cái hình này á hả? >.<",
+              title: "Hay này hả? >.<",
               subtitle: "Không có gì T_T",
-              image_url: received_message.attachments[0],
+              image_url: attachment_url,//ko dc received_message.attachments[0],
               buttons: [
                 {
                   type: "postback", //chạy vo ham handlePostBack
