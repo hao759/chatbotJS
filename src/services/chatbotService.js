@@ -5,10 +5,12 @@ import request from "request";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-const url_img2 =
-  "https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-chibi-de-thuong-nhat_022624992.jpg";
-// const url_img2 = "https://bit.ly/chibisutu";
+const url_img2 = "https://bit.ly/chibisutu";
+const imgKatarina =
+  "https://ecdn.game4v.com/g4v-content/uploads/2021/03/LMHT-Toc-Chien-ra-mat-Katarina-GAME4V.jpg";
 
+const imgZed =
+  "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -126,24 +128,19 @@ let getMainMenuTemplate = () => {
           {
             title: "Chao ban. Day la getMainMenuTemplate",
             subtitle: "getMainMenuTemplate",
-            image_url: url_img2,
+            image_url: imgKatarina,
             buttons: [
               {
                 type: "postback",
                 title: "Ukm ;)",
                 payload: "yes",
               },
-              {
-                type: "postback", //chạy vo ham handlePostBack
-                title: "Éo :v",
-                payload: "no",
-              },
             ],
           },
           {
             title: "Chao ban. Day la getMainMenuTemplate2",
             subtitle: "getMainMenuTemplate",
-            image_url: url_img2,
+            image_url: imgZed,
             buttons: [
               {
                 type: "postback",

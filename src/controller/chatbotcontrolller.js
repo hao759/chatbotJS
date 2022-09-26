@@ -76,7 +76,7 @@ function handleMessage(sender_psid, received_message) {
     };
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
-    let attachment_url =  received_message.attachments[0].payload.url;
+    let attachment_url = received_message.attachments[0].payload.url;
     response = {
       attachment: {
         type: "template",
@@ -116,13 +116,12 @@ function handleMessage(sender_psid, received_message) {
                   payload: "MAIN_MENU",
                 },
                 {
-                  "type": "postback",
-                  "title": "Khởi động lại bot",
-                  "payload": "Restart"
-              },
-
+                  type: "postback",
+                  title: "Khởi động lại bot",
+                  payload: "Restart",
+                },
               ],
-            }
+            },
           ],
         },
       },
@@ -132,8 +131,6 @@ function handleMessage(sender_psid, received_message) {
   // Send the response message
   callSendAPI(sender_psid, response);
 }
-
-
 
 // Handles messaging_postbacks events
 async function handlePostback(sender_psid, received_postback) {
@@ -155,7 +152,7 @@ async function handlePostback(sender_psid, received_postback) {
       console.log("123");
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      
+
       break;
 
     case "maybe":
@@ -164,7 +161,7 @@ async function handlePostback(sender_psid, received_postback) {
 
     case "MAIN_MENU":
       await chatbotService.handleSendMenu(sender_psid);
-    break;
+      break;
 
     default:
       response = { text: "Oop :), default " };
@@ -226,27 +223,33 @@ let setupProfile = async (req, res) => {
   );
   return res.send("OK chào bạn :)");
 };
-let setupPersistent=async (req,res)=>{
+let setupPersistent = async (req, res) => {
   let request_body = {
-    "persistent_menu": [
+    persistent_menu: [
+      {
+        locale: "default",
+        composer_input_disabled: false,
+        call_to_actions: [
           {
-              "locale": "default",
-              "composer_input_disabled": false,
-              "call_to_actions": [
-                  {
-                      "type": "postback",
-                      "title": "Khởi động lại bot",
-                      "payload": "Restart"
-                  },
-                  {
-                      "type": "web_url",
-                      "title": "Shop now",
-                      "url": "https://www.originalcoastclothing.com/",
-                      "webview_height_ratio": "full"
-                  }
-              ]
-          }
-      ]
+            type: "web_url",
+            title: "Shop now",
+            url: "https://www.originalcoastclothing.com/",
+            webview_height_ratio: "full",
+          },
+          {
+            type: "web_url",
+            title: "Heroku",
+            url: "https://chatbotlan2.herokuapp.com/",
+            webview_height_ratio: "full",
+          },
+          {
+            type: "postback",
+            title: "Khởi động lại bot",
+            payload: "Restart",
+          },
+        ],
+      },
+    ],
   };
   // Send the HTTP request to the Messenger Platform
   await request(
@@ -265,12 +268,12 @@ let setupPersistent=async (req,res)=>{
       }
     }
   );
-}
+};
 
 module.exports = {
   getHomePage,
   getWebHook,
   postWebhook,
   setupProfile,
-  setupPersistent
+  setupPersistent,
 };
