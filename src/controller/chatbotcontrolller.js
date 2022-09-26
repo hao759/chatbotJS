@@ -123,7 +123,7 @@ let sendImage=(sender_psid)=>{
         "type":"image", 
         "payload":{
           "is_reusable": true,
-          "url":"url_img2"
+          "url":url_img2
         }
       }
     }
