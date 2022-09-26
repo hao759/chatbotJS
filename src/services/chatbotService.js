@@ -11,6 +11,8 @@ const imgKatarina =
 
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
+
+  
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -42,8 +44,11 @@ let handleGetStarted = (sender_psid) => {
       let userName = await getUserName(sender_psid);
       let response = { text: `Hello ${userName} :), started rồi đó.` };
       let response1 = sendImage(sender_psid);
+      let response2 = SendButton_Template();
       await callSendAPI(sender_psid, response);
       await callSendAPI(sender_psid, response1);
+      await callSendAPI(sender_psid, response2);
+      
       resole("done");
     } catch (error) {
       reject(error);
@@ -61,7 +66,7 @@ let getUserName = (sender_psid) => {
       (err, res, body) => {
         if (!err) {
           body = JSON.parse(body);
-          let userName = `${body.last_name} ${body.first_name} `;
+          let userName = `${body.last_name} ${body.first_name}`;
           resole(userName);
         } else {
           console.error("Unable to send message:" + err);
@@ -172,6 +177,24 @@ let sendImage = (sender_psid) => {
     },
   };
 
+  return response;
+};
+
+let SendButton_Template = () => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "<image|video>",
+               "url": "https://media0.giphy.com/media/GbUrFXadBryQ8/giphy.gif"
+            }
+         ]
+      }
+    }  
+  }
   return response;
 };
 

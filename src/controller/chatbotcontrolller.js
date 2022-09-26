@@ -94,7 +94,7 @@ function handleMessage(sender_psid, received_message) {
 
       default:
         response = {
-         text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
+          text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
         };
         break;
     }
@@ -221,7 +221,7 @@ function callSendAPI(sender_psid, response) {
   );
 }
 
-let setupProfile = async (req, res) => {
+let setupProfile = async (req, res) => {//????????????????
   //call profile api facebook
   let request_body = {
     get_started: { payload: "GET_STARTED" },
@@ -254,10 +254,9 @@ let setupPersistent = async (req, res) => {
         composer_input_disabled: false,
         call_to_actions: [
           {
-            type: "web_url",
-            title: "Shop now",
-            url: "https://www.originalcoastclothing.com/",
-            webview_height_ratio: "full",
+            type: "postback",
+            title: "Mở Main_menu",
+            payload: "MAIN_MENU",
           },
           {
             type: "web_url",
