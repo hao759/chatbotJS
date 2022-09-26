@@ -12,7 +12,8 @@ const imgKatarina =
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 
-const Gif1 = "https://www.facebook.com/P.1500.Monster/videos/824824665207473/";
+const Gif1 =
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -43,7 +44,10 @@ let handleGetStarted = (sender_psid) => {
   return new Promise(async (resole, reject) => {
     try {
       let userName = await getUserName(sender_psid);
-      let response = { text: `Hello ${userName} :), started rồi đó.` };
+      let response;
+      if (userName!=undefined)
+        response = { text: `Hello ${userName} :), started rồi đó.` };
+      else response = { text: `Hello bạn :), started rồi đó.` };
       // let response1 = sendImage(sender_psid);
       let response2 = sendGIF();
 
@@ -186,7 +190,7 @@ let sendImage = () => {
     attachment: {
       type: "image",
       payload: {
-        url: url_img2,//"https://www.facebook.com/P.1500.Monster/videos/824824665207473",
+        url: url_img2, //"https://www.facebook.com/P.1500.Monster/videos/824824665207473",
         is_reusable: true,
       },
     },
@@ -213,22 +217,19 @@ let SendButton_Template = () => {
   return response;
 };
 
-let sendGIF=()=>{
+let sendGIF = () => {
   let response = {
     //  message: {
     attachment: {
       type: "image",
       payload: {
-        url: "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif",
+        url: Gif1,
         is_reusable: true,
       },
     },
-  }
+  };
   return response;
-}
-
-
-
+};
 
 module.exports = {
   handleGetStarted,
