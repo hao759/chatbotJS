@@ -45,7 +45,7 @@ let handleGetStarted = (sender_psid) => {
       let userName = await getUserName(sender_psid);
       let response = { text: `Hello ${userName} :), started rồi đó.` };
       let response1 = sendImage(sender_psid);
-      let response2 = SendButton_Template();
+      let response2 = sendGIF();
       await callSendAPI(sender_psid, response);
       await callSendAPI(sender_psid, response1);
       await callSendAPI(sender_psid, response2);
@@ -211,6 +211,22 @@ let SendButton_Template = () => {
   };
   return response;
 };
+
+let sendGIF=()=>{
+  let response = {
+    //  message: {
+    attachment: {
+      type: "image",
+      payload: {
+        url: "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif",
+        is_reusable: true,
+      },
+    },
+  }
+}
+
+
+
 
 module.exports = {
   handleGetStarted,
