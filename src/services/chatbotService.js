@@ -12,7 +12,8 @@ const imgKatarina =
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 
-  
+const Gif1 = "https://www.facebook.com/messenger_photo/?fbid=1058196594871835&message_id=mid.%24cAAAAAG8AnB-JqvtTMWDebYGmSizk";
+
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -48,7 +49,7 @@ let handleGetStarted = (sender_psid) => {
       await callSendAPI(sender_psid, response);
       await callSendAPI(sender_psid, response1);
       await callSendAPI(sender_psid, response2);
-      
+
       resole("done");
     } catch (error) {
       reject(error);
@@ -182,19 +183,19 @@ let sendImage = (sender_psid) => {
 
 let SendButton_Template = () => {
   let response = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-         "template_type": "media",
-         "elements": [
-            {
-               "media_type": "<image|video>",
-               "url": "https://media0.giphy.com/media/GbUrFXadBryQ8/giphy.gif"
-            }
-         ]
-      }
-    }  
-  }
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "<image|video>",
+            url: Gif1,
+          },
+        ],
+      },
+    },
+  };
   return response;
 };
 
