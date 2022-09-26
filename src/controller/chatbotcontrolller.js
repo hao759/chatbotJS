@@ -94,7 +94,7 @@ function handleMessage(sender_psid, received_message) {
 
       default:
         response = {
-          text: `Ơ :* `,
+         text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
         };
         break;
     }
