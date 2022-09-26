@@ -12,7 +12,7 @@ const imgKatarina =
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 
-const Gif1 = "https://www.facebook.com/tonydzung.com.vn/photos/a.920059914689090/6138330639528632/";
+const Gif1 = "https://www.facebook.com/P.1500.Monster/videos/682232322746331/";
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
