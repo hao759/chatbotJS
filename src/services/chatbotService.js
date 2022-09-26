@@ -7,7 +7,8 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 
 
-const url_img2 = "https://bit.ly/chibisutu";
+const url_img2 = "https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-chibi-de-thuong-nhat_022624992.jpg";
+// const url_img2 = "https://bit.ly/chibisutu";
 
 
 
@@ -167,7 +168,7 @@ let getMainMenuTemplate=()=>{
   return response;
 }
 
-let sendImage = async  (sender_psid) => {
+let sendImage = (sender_psid) => {
   let response = {
    message: {
      "attachment":{
