@@ -183,7 +183,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-       sendImage(sender_psid);
+      await sendImage(sender_psid);
       break;
 
     case "maybe":
