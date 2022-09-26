@@ -41,7 +41,9 @@ let handleGetStarted = (sender_psid) => {
     try {
       let userName = await getUserName(sender_psid);
       let response = { text: `Hello ${userName} :), started rồi đó.` };
+      let response1=sendImage(sender_psid);
       await callSendAPI(sender_psid, response);
+      await callSendAPI(sender_psid, response1);
       resole("done");
     } catch (error) {
       reject(error);
@@ -164,6 +166,21 @@ let getMainMenuTemplate=()=>{
   };
   return response;
 }
+
+let sendImage = async  (sender_psid) => {
+  let response = {
+   message: {
+     "attachment":{
+       "type":"image", 
+       "payload":{
+         "url":url_img2, 
+         "is_reusable":true
+       }
+     }
+   },
+ };
+ return response;
+};
 
 module.exports = {
   handleGetStarted,

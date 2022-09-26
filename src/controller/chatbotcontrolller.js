@@ -128,24 +128,7 @@ function handleMessage(sender_psid, received_message) {
   callSendAPI(sender_psid, response);
 }
 
-let sendImage = async  (sender_psid) => {
-   let response = {
-    message: {
-      "attachment":{
-        "type":"image", 
-        "payload":{
-          "url":url_img2, 
-          "is_reusable":true
-        }
-      }
-    },
-  };
-  return response;
- 
-  
-  
-  
-};
+
 
 // Handles messaging_postbacks events
 async function handlePostback(sender_psid, received_postback) {
@@ -166,7 +149,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      await callSendAPI(sendImage(sender_psid))
+      
       break;
 
     case "maybe":
