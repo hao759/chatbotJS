@@ -180,7 +180,7 @@ let getMainMenuTemplate = () => {
   return response;
 };
 
-let sendImage = (sender_psid) => {
+let sendImage = () => {
   let response = {
     //  message: {
     attachment: {
