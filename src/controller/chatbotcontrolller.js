@@ -167,7 +167,8 @@ async function handlePostback(sender_psid, received_postback) {
   switch (payload) {
     case "yes":
       response = { text: "OK <3" };
-      await chatbotService.sendImage();
+      let response1 = sendImage(sender_psid);
+      await callSendAPI(sender_psid, response1);
       break;
 
     case "no":
