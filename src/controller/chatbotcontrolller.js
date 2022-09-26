@@ -69,12 +69,18 @@ let getWebHook = (req, res) => {
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
   let response;
-  if (received_message.text) {
+  if (received_message.text!="alo") {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
     response = {
       text: `"${received_message.text}" chi mày, gửi tao cái ảnh thử đi  :* `,
     };
-  } else if (received_message.attachments) {
+  }
+  else if(received_message.text=="alo"){
+    response = {
+      text: `Nói gì nói đại đi còn alo alo  :* `,
+    };
+  }
+  else if (received_message.attachments) {
     // Get the URL of the message attachment
     let attachment_url = received_message.attachments[0].payload.url;
     response = {
@@ -107,7 +113,7 @@ function handleMessage(sender_psid, received_message) {
             },
             {
               title: "Hay này hả? >.<",
-              subtitle: "Không có gì T_T",
+              subtitle: "Chắc là vậy T_T",
               image_url: attachment_url,
               buttons: [
                 {
@@ -149,7 +155,6 @@ async function handlePostback(sender_psid, received_postback) {
       response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
       break;
     case "Restart":
-      console.log("123");
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
 
