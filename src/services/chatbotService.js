@@ -45,7 +45,7 @@ let handleGetStarted = (sender_psid) => {
     try {
       let userName = await getUserName(sender_psid);
       let response;
-      if (userName)
+      if (userName !="undefined undefined")
         response = { text: `Hello ${userName} :), started rồi đó.` };
       else 
       response = { text: `Hello bạn :), started rồi đó.` };
