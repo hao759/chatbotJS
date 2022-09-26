@@ -43,7 +43,6 @@ let handleGetStarted = (sender_psid) => {
       let response = { text: `Hello ${userName} :), started rồi đó.` };
       let response1 = sendImage(sender_psid);
       await callSendAPI(sender_psid, response);
-      console.log("------------------------------------------");
       await callSendAPI(sender_psid, response1);
       resole("done");
     } catch (error) {
@@ -126,8 +125,8 @@ let getMainMenuTemplate = () => {
         template_type: "generic",
         elements: [
           {
-            title: "Chao ban. Day la getMainMenuTemplate",
-            subtitle: "getMainMenuTemplate",
+            title: "Katarina ",
+            subtitle: "Bông sen tử thần",
             image_url: imgKatarina,
             buttons: [
               {
