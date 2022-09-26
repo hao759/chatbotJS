@@ -117,7 +117,7 @@ function handleMessage(sender_psid, received_message) {
 }
 
 let sendImage=(sender_psid)=>{
-  response={
+  let response={
     "message":{
       "attachment":{
         "type":"image", 
