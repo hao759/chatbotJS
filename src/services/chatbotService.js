@@ -157,7 +157,23 @@ let getMainMenuTemplate = () => {
                 title: "Éo :v",
                 payload: "no",
               },
+              {
+                title: "Katarina ",
+                subtitle: "Bông sen tử thần",
+                image_url: "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
+                buttons: [
+                  {
+                    type: "postback",
+                    title: "Ukm ;)",
+                    payload: "yes",
+                  },
+                ],
+              },
             ],
+            
+
+
+            
           },
         ],
       },
