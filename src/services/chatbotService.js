@@ -185,7 +185,7 @@ let sendImage = (sender_psid) => {
     attachment: {
       type: "image",
       payload: {
-        url: "https://www.facebook.com/P.1500.Monster/videos/824824665207473",//url_img2,
+        url: url_img2,//"https://www.facebook.com/P.1500.Monster/videos/824824665207473",
         is_reusable: true,
       },
     },
