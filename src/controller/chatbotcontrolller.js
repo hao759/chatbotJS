@@ -140,9 +140,10 @@ let sendImage = async  (sender_psid) => {
       }
     },
   };
+  return response;
  
   
-  await callSendAPI(sender_psid,response)
+  
   
 };
 
@@ -165,7 +166,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      await sendImage(sender_psid);
+      await callSendAPI(sendImage(sender_psid))
       break;
 
     case "maybe":
