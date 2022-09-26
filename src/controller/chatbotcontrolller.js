@@ -106,6 +106,28 @@ function handleMessage(sender_psid, received_message) {
                 },
               ],
             },
+            {
+              title: "Mày mới gửi cái hình này á hả? >.<",
+              subtitle: "2 đâu. T_T",
+              image_url: url_img2,
+              buttons: [
+                {
+                  type: "postback",
+                  title: "Ukm ;)",
+                  payload: "yes",
+                },
+                {
+                  type: "postback", //chạy vo ham handlePostBack
+                  title: "Éo :v",
+                  payload: "no",
+                },
+                {
+                  type: "postback",
+                  title: "Đoán xem ",
+                  payload: "maybe",
+                },
+              ],
+            }
           ],
         },
       },
@@ -116,8 +138,8 @@ function handleMessage(sender_psid, received_message) {
   callSendAPI(sender_psid, response);
 }
 
-let sendImage = (sender_psid) => {
-  let response = {
+let sendImage =  (sender_psid) => {
+   let response = {
     message: {
       attachment: {
         type: "image",
@@ -157,9 +179,9 @@ async function handlePostback(sender_psid, received_postback) {
       response = { text: "Đoán qq" };
       break;
 
-    // case "yes":
-    // response = { text: "OK :)" };
-    // break;
+    case "MAIN_MENU":
+      await chatbotService.handleSendMenu(sender_psid);
+    break;
 
     default:
       response = { text: "Oop :), default " };

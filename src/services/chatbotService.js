@@ -5,6 +5,12 @@ import request from "request";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
+
+
+const url_img2 = "https://bit.ly/chibisutu";
+
+
+
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -63,7 +69,90 @@ let getUserName = (sender_psid) => {
   });
 };
 
+let handleSendMenu=(sender_psid)=>{
+  return new Promise(async (resole, reject) => {
+    try {
+      let response =  getMainMenuTemplate();
+      await callSendAPI(sender_psid, response);
+      resole("done");
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
+// let getStartedTemplete=()=>{
+//   let response = {
+//     attachment: {
+//       type: "template",
+//       payload: {
+//         template_type: "generic",
+//         elements: [
+//           {
+//             title: "Chao ban",
+//             subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
+//             image_url: url_img2,
+//             buttons: [
+//               {
+//                 type: "postback",
+//                 title: "Ukm ;)",
+//                 payload: "yes",
+//               },
+//               {
+//                 type: "postback", //chạy vo ham handlePostBack
+//                 title: "Éo :v",
+//                 payload: "no",
+//               },
+//               {
+//                 type: "postback",
+//                 title: "Đoán xem ",
+//                 payload: "maybe",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//     },
+//   };
+// }
+
+let getMainMenuTemplate=()=>{
+  let response = {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "generic",
+        elements: [
+          {
+            title: "Chao ban",
+            subtitle: "getMainMenuTemplate",
+            image_url: url_img2,
+            buttons: [
+              {
+                type: "postback",
+                title: "Ukm ;)",
+                payload: "yes",
+              },
+              {
+                type: "postback", //chạy vo ham handlePostBack
+                title: "Éo :v",
+                payload: "no",
+              },
+              {
+                type: "postback",
+                title: "Đoán xem ",
+                payload: "maybe",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+  return response;
+}
+
 module.exports = {
   handleGetStarted,
   callSendAPI,
+  handleSendMenu
 };
