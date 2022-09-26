@@ -189,7 +189,7 @@ let SendButton_Template = () => {
         template_type: "media",
         elements: [
           {
-            media_type: "video",
+            media_type: "<video>",
             url: Gif1,
           },
         ],
