@@ -123,7 +123,7 @@ let getMainMenuTemplate=()=>{
         template_type: "generic",
         elements: [
           {
-            title: "Chao ban.getMainMenuTemplate",
+            title: "Chao ban. Day la getMainMenuTemplate",
             subtitle: "getMainMenuTemplate",
             image_url: url_img2,
             buttons: [
