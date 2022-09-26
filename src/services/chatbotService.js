@@ -123,7 +123,7 @@ let getMainMenuTemplate=()=>{
         template_type: "generic",
         elements: [
           {
-            title: "Chao ban",
+            title: "Chao ban.getMainMenuTemplate",
             subtitle: "getMainMenuTemplate",
             image_url: url_img2,
             buttons: [
@@ -137,11 +137,7 @@ let getMainMenuTemplate=()=>{
                 title: "Éo :v",
                 payload: "no",
               },
-              {
-                type: "postback",
-                title: "Đoán xem ",
-                payload: "maybe",
-              },
+              
             ],
           },
         ],
