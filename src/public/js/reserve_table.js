@@ -63,6 +63,7 @@ function handleClickButtonReserve() {
       MessengerExtensions.requestCloseBrowser(
         function success() {
           // webview closed
+          console.log("Ko loi");
         },
         function error(err) {
           // an error occurred
