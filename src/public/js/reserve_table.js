@@ -63,6 +63,7 @@ function handleClickButtonReserve() {
 
     if (1) {
       // close webview
+      console.log("vo dc 1 1 1")
       MessengerExtensions.requestCloseBrowser(
         function success() {
           // webview closed
