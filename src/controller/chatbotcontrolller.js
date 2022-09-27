@@ -327,7 +327,7 @@ let handleReserve=(req,res)=>{
   res.render("webView.ejs");
 }
 
-let handlePostReserve=( req,res)=>{
+let handlePostReserve= async( req,res)=>{
   try {
     let customerName = "";
     if (req.body.customerName === "") {
