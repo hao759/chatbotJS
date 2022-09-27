@@ -123,9 +123,11 @@ function handleMessage(sender_psid, received_message) {
                   payload: "no",
                 },
                 {
-                  type: "postback",
-                  title: "Đoán xem ",
-                  payload: "maybe",
+                  type: "web_url",
+                  url:`${process.env.URL_WEBVIEW_ORDER}`,
+                  title: "Reserve",
+                  webview_height_ratio: "tall",
+                  messenger_extensions:true//mo tren tag do
                 },
               ],
             },
@@ -177,10 +179,6 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      break;
-
-    case "maybe":
-      response = { text: "Đoán qq" };
       break;
 
     case "MAIN_MENU":
@@ -324,10 +322,17 @@ let sendTypingOn=(sender_psid)=>{
   );
 }
 
+
+let handleReserve=(req,res)=>{
+  res.render("webView.ejs");
+}
+
+
 module.exports = {
   getHomePage,
   getWebHook,
   postWebhook,
   setupProfile,
   setupPersistent,
+  handleReserve
 };
