@@ -50,6 +50,7 @@ window.extAsyncInit = function () {
 // }
 
 function handleClickButtonReserve() {
+  console.log("vo dc handleClickButtonReserve")
   $("#btnFindOrder").on("click", function (e) {
     // let check = validateInputFields();
     let data = {

@@ -332,7 +332,7 @@ let handlePostReserve = async (req, res) => {
 
     // I demo response with sample text
     // you can check database for customer order's status
-
+    console.log("vo dc handlePostReserve")
     let response1 = {
       text: `---Info about your lookup đặt bàn---
         \nEmail address: ${req.body.email}
