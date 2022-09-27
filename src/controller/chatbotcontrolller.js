@@ -124,10 +124,10 @@ function handleMessage(sender_psid, received_message) {
                 },
                 {
                   type: "web_url",
-                  url:`${process.env.URL_WEBVIEW_ORDER}`,
+                  url: `${process.env.URL_WEBVIEW_ORDER}`,
                   title: "Reserve",
                   webview_height_ratio: "tall",
-                  messenger_extensions:true//mo tren tag do
+                  messenger_extensions: true, //mo tren tag do
                 },
               ],
             },
@@ -222,10 +222,8 @@ async function callSendAPI(sender_psid, response) {
   );
 }
 
-
-
-
-let setupProfile = async (req, res) => {//????????????????
+let setupProfile = async (req, res) => {
+  //????????????????
   //call profile api facebook
   let request_body = {
     get_started: { payload: "GET_STARTED" },
@@ -296,13 +294,12 @@ let setupPersistent = async (req, res) => {
   );
 };
 
-
-let sendTypingOn=(sender_psid)=>{
+let sendTypingOn = (sender_psid) => {
   let request_body = {
     recipient: {
       id: sender_psid,
     },
-    "sender_action":"typing_on"
+    sender_action: "typing_on",
   };
   // Send the HTTP request to the Messenger Platform
   request(
@@ -320,44 +317,42 @@ let sendTypingOn=(sender_psid)=>{
       }
     }
   );
-}
+};
 
-
-let handleReserve=(req,res)=>{
+let handleReserve = (req, res) => {
   res.render("webView.ejs");
-}
+};
 
-let handlePostReserve= async( req,res)=>{
+let handlePostReserve = async (req, res) => {
   try {
-    let customerName = "";
-    if (req.body.customerName === "") {
-        customerName = "Empty";
-    } else customerName = req.body.customerName;
+    // let customerName = "";
+    // if (req.body.customerName === "") {
+    //   customerName = "Empty";
+    // } else customerName = req.body.customerName;
 
     // I demo response with sample text
     // you can check database for customer order's status
 
     let response1 = {
-        "text": `---Info about your lookup đặt bàn---
-        \nHọ tên: ${customerName}
+      text: `---Info about your lookup đặt bàn---
+        
         \nEmail address: ${req.body.email}
         \Phone number: ${req.body.phoneNumber}
-        `
-    };
-
+        `,
+    };//\nHọ tên: ${customerName}
 
     await chatbotService.callSendAPI(req.body.psid, response1);
 
     return res.status(200).json({
-        message: "ok"
+      message: "ok",
     });
-} catch (e) {
-  console.log("Loi reserve table")
-  return res.status(500).json({
-    message: "Server error"
-});
-}
-}
+  } catch (e) {
+    console.log("Loi reserve table");
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
+};
 
 module.exports = {
   getHomePage,
@@ -366,5 +361,5 @@ module.exports = {
   setupProfile,
   setupPersistent,
   handleReserve,
-  handlePostReserve
+  handlePostReserve,
 };
