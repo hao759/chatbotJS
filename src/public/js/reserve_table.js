@@ -16,6 +16,7 @@ window.extAsyncInit = function () {
     "661241558826141",
     function success(thread_context) {
       // success
+      console.log("vo dc function success")
       $("#psid").val(thread_context.psid);
       handleClickButtonReserve();
     },
