@@ -327,6 +327,37 @@ let handleReserve=(req,res)=>{
   res.render("webView.ejs");
 }
 
+let handlePostReserve=( req,res)=>{
+  try {
+    let customerName = "";
+    if (req.body.customerName === "") {
+        customerName = "Empty";
+    } else customerName = req.body.customerName;
+
+    // I demo response with sample text
+    // you can check database for customer order's status
+
+    let response1 = {
+        "text": `---Info about your lookup đặt bàn---
+        \nHọ tên: ${customerName}
+        \nEmail address: ${req.body.email}
+        \Phone number: ${req.body.phoneNumber}
+        `
+    };
+
+
+    await chatbotService.callSendAPI(req.body.psid, response1);
+
+    return res.status(200).json({
+        message: "ok"
+    });
+} catch (e) {
+  console.log("Loi reserve table")
+  return res.status(500).json({
+    message: "Server error"
+});
+}
+}
 
 module.exports = {
   getHomePage,
@@ -334,5 +365,6 @@ module.exports = {
   postWebhook,
   setupProfile,
   setupPersistent,
-  handleReserve
+  handleReserve,
+  handlePostReserve
 };
