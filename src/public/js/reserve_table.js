@@ -12,6 +12,7 @@
 
 window.extAsyncInit = function () {
   // the Messenger Extensions JS SDK is done loading
+  console.log("vo dc function success")
   MessengerExtensions.getContext(
     "661241558826141",
     function success(thread_context) {
@@ -60,7 +61,7 @@ function handleClickButtonReserve() {
       email: $("#email").val(),
       phoneNumber: $("#phoneNumber").val(),
     };
-
+    console.log("vo dc 1 1 1")
     if (1) {
       // close webview
       console.log("vo dc 1 1 1")
