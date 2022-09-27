@@ -335,13 +335,12 @@ let handlePostReserve = async (req, res) => {
 
     let response1 = {
       text: `---Info about your lookup đặt bàn---
-        
         \nEmail address: ${req.body.email}
         \Phone number: ${req.body.phoneNumber}
         `,
     };//\nHọ tên: ${customerName}
 
-    await chatbotService.callSendAPI(req.body.psid, response1);
+    await callSendAPI(req.body.psid, response1);
 
     return res.status(200).json({
       message: "ok",

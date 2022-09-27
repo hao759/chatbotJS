@@ -68,7 +68,7 @@ function handleClickButtonFindOrder() {
         },
         function error(err) {
           // an error occurred
-          console.log(err);
+          console.log('Loi roi' , err);
         }
       );
 
