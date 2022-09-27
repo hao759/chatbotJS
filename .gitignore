@@ -1,6 +1,7 @@
+.env
 /node_modules
 /vendor
 /.idea
 .idea/
-.env
 /public/bower_components
+.env.example
