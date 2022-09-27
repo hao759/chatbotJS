@@ -1,5 +1,3 @@
-
-
 (function (d, s, id) {
   var js,
     fjs = d.getElementsByTagName(s)[0];
@@ -51,7 +49,7 @@ window.extAsyncInit = function () {
 //   return false;
 // }
 
-function handleClickButtonFindOrder() {
+function handleClickButtonReserve() {
   $("#btnFindOrder").on("click", function (e) {
     // let check = validateInputFields();
     let data = {
@@ -68,7 +66,7 @@ function handleClickButtonFindOrder() {
         },
         function error(err) {
           // an error occurred
-          console.log('Loi roi' , err);
+          console.log("Loi roi", err);
         }
       );
 
