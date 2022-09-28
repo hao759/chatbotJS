@@ -60,7 +60,7 @@ function handleClickButtonReserveTable(senderId) {
     $("#btnFindOrder").on("click", function (e) {
       let check = true;
       // check=; //return true or false
-      console.log(senderId);
+      console.log("-------------senderId-------------",senderId);
 
       var data = {
         // psid: $("#psid").val(),
