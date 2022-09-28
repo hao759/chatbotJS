@@ -15,7 +15,8 @@
 window.extAsyncInit = function () {
   // the Messenger Extensions JS SDK is done loading
   console.log("vo dc function success");
-  MessengerExtensions.getContext(
+  // MessengerExtensions.getContext(
+    MessengerExtensions.requestCloseBrowser(
     '661241558826141',
     function success(thread_context) {
       // success
