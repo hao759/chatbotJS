@@ -338,7 +338,7 @@ let handlePostReserve = async (req, res) => {
         \Phone number: ${req.body.phoneNumber}
         `,
     }; //\nHọ tên: ${customerName}
-    console.log("4");
+    console.log(req.body.senderId);
     await callSendAPI(req.body.senderId, response1);
     console.log(response1);
     return res.status(200).json({
