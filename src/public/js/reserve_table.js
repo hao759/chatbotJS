@@ -7,6 +7,7 @@
   js = d.createElement(s);
   js.id = id;
   js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+  console.log("aaa")
   fjs.parentNode.insertBefore(js, fjs);
 })(document, "script", "Messenger");
 
