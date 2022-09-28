@@ -18,8 +18,8 @@ let initWebRoute = (app) => {
 
   router.get("/reserve/:senderId", chatbotController.handleReserve);
 
-  router.post("/he", chatbotController.handlePostReserve);
-// /reserve-table-ajax
+  router.post("/reserve-table-ajax",chatbotController.handlePostReserve);
+// /
   
   return app.use("/", router);
 };
