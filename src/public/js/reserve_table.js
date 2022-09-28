@@ -60,7 +60,9 @@ function handleClickButtonReserveTable() {
     $("#btnFindOrder").on("click", function (e) {
       let check = true;
       // check=; //return true or false
-      console.log("------handleClickButtonReserveTable----------");
+      console.log($("#customerName").val());
+      console.log($("#email").val());
+      console.log($("#phoneNumber").val());
       let data = {
         // psid: $("#psid").val(),
         customerName: $("#customerName").val(),
