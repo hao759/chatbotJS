@@ -82,14 +82,14 @@ function handleClickButtonReserveTable() {
             
           }
         );
-        console.log("-------ajax---------");
+        console.log("suc",data);
         //send data to node.js server
         $.ajax({
           url: `${window.location.origin}/reserve-table-ajax`,
           method: "POST",
           data: data,
           success: function (data) {
-            console.log("suc",data);
+            console.log("suc1",data);
           },
           error: function (error) {
             console.log("err",error);
