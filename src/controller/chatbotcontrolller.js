@@ -326,33 +326,30 @@ let handleReserve = (req, res) => {
 };
 
 let handlePostReserve = async (req, res) => {
-  return new Promise((res,ejc)=>{
-    try {
-      console.log("2");
-      // let customerName = "";
-      // if (req.body.customerName === "") {
-      //   customerName = "Empty";
-      // } else customerName = req.body.customerName;
-      let response1 = {
-        text: `---Info about your lookup đặt bàn---
-          \Email address: ${req.body.email}
-          \Phone number: ${req.body.phoneNumber}
-          `,
-      }; //\nHọ tên: ${customerName}
-      console.log("4");
-      await callSendAPI(req.body.psid, response1);
-      // console.log("4");
-      // return res.status(200).json({
-      //   message: "ok1",
-      // });
-    } 
-    catch (e) {
-      console.log("Loi reserve table");
-      return res.status(500).json({
-        message: "Server error",
-      });
-    }
-  })
+  try {
+    console.log("2");
+    // let customerName = "";
+    // if (req.body.customerName === "") {
+    //   customerName = "Empty";
+    // } else customerName = req.body.customerName;
+    let response1 = {
+      text: `---Info about your lookup đặt bàn---
+        \Email address: ${req.body.email}
+        \Phone number: ${req.body.phoneNumber}
+        `,
+    }; //\nHọ tên: ${customerName}
+    console.log("4");
+    await callSendAPI(req.body.psid, response1);
+    console.log("4");
+    return res.status(200).json({
+      message: "ok1",
+    });
+  } catch (e) {
+    console.log("Loi reserve table");
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
 };
 
 module.exports = {
