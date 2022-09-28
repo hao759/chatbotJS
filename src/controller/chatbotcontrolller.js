@@ -319,45 +319,40 @@ let sendTypingOn = (sender_psid) => {
   );
 };
 
-
-
-
-
 let handleReserve = (req, res) => {
-  
-  let senderId=req.params.senderId;
+  let senderId = req.params.senderId;
 
-  return res.render("webView.ejs",{senderId:senderId});
+  return res.render("webView.ejs", { senderId: senderId });
 };
 
 let handlePostReserve = async (req, res) => {
-  try {
-    console.log("2")
-    // let customerName = "";
-    // if (req.body.customerName === "") {
-    //   customerName = "Empty";
-    // } else customerName = req.body.customerName;
-    console.log("3")
-    let response1 = {
-      text: `---Info about your lookup đặt bàn---
-        \Email address: ${req.body.email}
-        \Phone number: ${req.body.phoneNumber}
-        `
-    };//\nHọ tên: ${customerName}
-    console.log("4")
-
-    await callSendAPI(req.body.psid, response1);
-    console.log("4")
-
-    return res.status(200).json({
-      message: "ok1",
-    });
-  } catch (e) {
-    console.log("Loi reserve table");
-    return res.status(500).json({
-      message: "Server error",
-    });
-  }
+  return new Promise((res,ejc)=>{
+    try {
+      console.log("2");
+      // let customerName = "";
+      // if (req.body.customerName === "") {
+      //   customerName = "Empty";
+      // } else customerName = req.body.customerName;
+      let response1 = {
+        text: `---Info about your lookup đặt bàn---
+          \Email address: ${req.body.email}
+          \Phone number: ${req.body.phoneNumber}
+          `,
+      }; //\nHọ tên: ${customerName}
+      console.log("4");
+      await callSendAPI(req.body.psid, response1);
+      // console.log("4");
+      // return res.status(200).json({
+      //   message: "ok1",
+      // });
+    } 
+    catch (e) {
+      console.log("Loi reserve table");
+      return res.status(500).json({
+        message: "Server error",
+      });
+    }
+  })
 };
 
 module.exports = {
