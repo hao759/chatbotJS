@@ -89,7 +89,7 @@ function handleClickButtonReserveTable() {
           method: "POST",
           data: data,
           success: function (data) {
-            console.log("suc1",data);
+            console.log("suc1",data,"haha");
           },
           error: function (error) {
             console.log("err",error);
