@@ -320,7 +320,7 @@ let sendTypingOn = (sender_psid) => {
 };
 
 let handleReserve = (req, res) => {
-  res.render("webView.ejs");
+  return res.render("webView.ejs");
 };
 
 let handlePostReserve = async (req, res) => {
