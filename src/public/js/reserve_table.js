@@ -25,7 +25,7 @@ console.log("-----2-------------------------------")
         //run fall back
 
           $("#psid").val(senderId);
-          handleClickButtonReserveTable();
+          handleClickButtonReserveTable(senderId);
       }
   );
 };
@@ -56,7 +56,7 @@ console.log("-----2-------------------------------")
 // }
 
 
-function handleClickButtonReserveTable() {
+function handleClickButtonReserveTable(senderId) {
     $("#btnFindOrder").on("click", function (e) {
       let check = true;
       // check=; //return true or false
@@ -88,6 +88,7 @@ function handleClickButtonReserveTable() {
           url: `${window.location.origin}/reserve-table-ajax`,
           method: "POST",
           data: data,
+          senderId:senderId,
           success: function (data) {
             console.log("suc1",data,"haha");
           },
