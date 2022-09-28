@@ -326,7 +326,7 @@ let handleReserve = (req, res) => {
 };
 
 let handlePostReserve = async (req, res) => {
-  // try {
+  try {
     console.log("2senderId");
     // let customerName = "";
     // if (req.body.customerName === "") {
@@ -340,16 +340,16 @@ let handlePostReserve = async (req, res) => {
     }; //\nHọ tên: ${customerName}
     console.log("4");
     await callSendAPI(req.body.senderId, response1);
-    console.log("4");
+    console.log(response1);
     return res.status(200).json({
       message: "ok1",
     });
-  // } catch (e) {
-  //   console.log("Loi reserve table");
-  //   return res.status(500).json({
-  //     message: "Server error",
-  //   });
-  // }
+  } catch (e) {
+    console.log("Loi reserve table");
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
 };
 
 module.exports = {
