@@ -89,10 +89,10 @@ function handleClickButtonReserveTable() {
           method: "POST",
           data: data,
           success: function (data) {
-            console.log(data);
+            console.log("suc",data);
           },
           error: function (error) {
-            console.log(error);
+            console.log("err",error);
           },
         });
       }
