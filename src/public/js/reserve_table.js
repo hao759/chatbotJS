@@ -21,8 +21,11 @@ console.log("-----2-------------------------------")
           handleClickButtonReserveTable();
       },
       function error(err) {
-          // error
           console.log('Lỗi đặt bàn Eric bot', err);
+        //run fall back
+
+          $("#psid").val(senderID);
+          handleClickButtonReserveTable();
       }
   );
 };
@@ -75,6 +78,7 @@ function handleClickButtonReserveTable() {
           function error(err) {
             // an error occurred
             console.log(err);
+            
           }
         );
 

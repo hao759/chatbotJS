@@ -124,7 +124,7 @@ function handleMessage(sender_psid, received_message) {
                 },
                 {
                   type: "web_url",
-                  url: `${process.env.URL_WEBVIEW_ORDER}`,
+                  url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
                   title: "Reserve",
                   webview_height_ratio: "tall",
                   messenger_extensions: true, //mo tren tag do
@@ -324,7 +324,8 @@ let sendTypingOn = (sender_psid) => {
 
 
 let handleReserve = (req, res) => {
-  return res.render("webView.ejs");
+  let senderId=req.params.senderId;
+  return res.render("webView.ejs",senderId);
 };
 
 let handlePostReserve = async (req, res) => {
