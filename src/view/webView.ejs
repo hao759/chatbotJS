@@ -38,18 +38,20 @@
               type="text"
               id="customerName"
               class="form-control"
-              placeholder="Họ và tên..." value="Lương Quốc Hào"
+              placeholder="Họ và tên..."
+              value="Lương Quốc Hào"
             />
           </div>
           <div class="form-group">
-            <label for="email" 
+            <label for="email"
               >Địa chỉ email (<span style="color: red">*</span>):</label
             >
             <input
               type="email"
               id="email"
               class="form-control"
-              placeholder="Địa chỉ email..." value="qhao1245@gmail.com"
+              placeholder="Địa chỉ email..."
+              value="qhao1245@gmail.com"
             />
             <div class="invalid-feedback">Địa chỉ email không hợp lệ.</div>
           </div>
@@ -61,7 +63,8 @@
               type="text"
               id="phoneNumber"
               class="form-control"
-              placeholder="Số điện thoại..." value="453453464564"
+              placeholder="Số điện thoại..."
+              value="453453464564"
             />
             <div class="invalid-feedback">Số điện thoại không hợp lệ.</div>
           </div>
@@ -69,6 +72,46 @@
         </div>
       </div>
     </div>
-    
+    <script>
+      function handleClickButtonReserveTable() {
+        $("#btnFindOrder").on("click", function (e) {
+          let check = validateInputFields(); //return true or false
+          console.log("----------------------");
+          let data = {
+            psid: $("#psid").val(),
+            customerName: $("#customerName").val(),
+            email: $("#email").val(),
+            phoneNumber: $("#phoneNumber").val(),
+          };
+
+          if (!check) {
+            //close webview
+            MessengerExtensions.requestCloseBrowser(
+              function success() {
+                console.log("--------------------");
+                // webview closed
+              },
+              function error(err) {
+                // an error occurred
+                console.log(err);
+              }
+            );
+
+            //send data to node.js server
+            $.ajax({
+              url: `${window.location.origin}/reserve-table-ajax`,
+              method: "POST",
+              data: data,
+              success: function (data) {
+                console.log(data);
+              },
+              error: function (error) {
+                console.log(error);
+              },
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
