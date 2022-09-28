@@ -62,7 +62,7 @@ function handleClickButtonReserveTable() {
       // check=; //return true or false
       console.log("handleClickButtonReserveTable");
 
-      let data = {
+      var data = {
         // psid: $("#psid").val(),
         customerName: $("#customerName").val(),
         email: $("#email").val(),
