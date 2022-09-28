@@ -350,7 +350,7 @@ let handlePostReserve = async (req, res) => {
     };//\nHọ tên: ${customerName}
 
     await callSendAPI(req.body.psid, response1);
-
+    console.log("4")
     return res.status(200).json({
       message: "ok",
     });
