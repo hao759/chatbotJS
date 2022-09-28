@@ -1,6 +1,5 @@
 (function (d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0];
+  var js,fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {
     return;
   }
@@ -15,7 +14,7 @@
 
 window.extAsyncInit = function () {
   // the Messenger Extensions JS SDK is done loading
-  console.log("vo dc function success")
+  console.log("vo dc function success");
   MessengerExtensions.getContext(
     '661241558826141',
     function success(thread_context) {
