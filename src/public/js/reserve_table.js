@@ -12,7 +12,7 @@
 window.extAsyncInit = function () {
   // the Messenger Extensions JS SDK is done loading 
 console.log("-----2-------------------------------")
-  MessengerExtensions.getContext('1014181375963265',
+  MessengerExtensions.getContext(661241558826141,
       function success(thread_context) {
         console.log("-------------3-----------------------")
           // success
