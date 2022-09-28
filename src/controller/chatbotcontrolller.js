@@ -333,17 +333,17 @@ let handleReserve = (req, res) => {
 let handlePostReserve = async (req, res) => {
   try {
     console.log("2")
-    let customerName = "";
-    if (req.body.customerName === "") {
-      customerName = "Empty";
-    } else customerName = req.body.customerName;
+    // let customerName = "";
+    // if (req.body.customerName === "") {
+    //   customerName = "Empty";
+    // } else customerName = req.body.customerName;
 
     // I demo response with sample text
     // you can check database for customer order's status
     console.log("3")
     let response1 = {
       text: `---Info about your lookup đặt bàn---
-        \nEmail address: ${req.body.email}
+        \Email address: ${req.body.email}
         \Phone number: ${req.body.phoneNumber}
         `
     };//\nHọ tên: ${customerName}
