@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đặt bàn</title>
     <link
-    href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-    rel="stylesheet"
-    id="bootstrap-css"
-  />
-</head>
-<body>
-    <form style="margin: 100px 50px 10px 50px ;">
-        <h2 style="text-align: center;transform:translateY(-50px);">Nhập thông tin khách</h2>
-        <div class="form-group " >
-          <label for="TenKhachHang">Tên khách hàng</label>
-          <input type="text" class="form-control" id="TenKhachHang" placeholder="Nhập tên">
-        </div>
-        <div class="form-group">
-          <label for="DiaChi">Địa chỉ</label>
-          <input type="text" class="form-control" id="DiaChi" placeholder="Nhập Địa chỉ">
-        </div>
-        <button class="btn btn-info p-2" type="submit">Submit</button>
-      </form>
-      <script src="../public/js/reserve_table.js"></script>
-</body>
+      href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/reserve_table.js"></script>
+  </head>
+  <body>
+    <form style="margin: 100px 50px 10px 50px">
+      <h2 style="text-align: center; transform: translateY(-50px)">
+        Nhập thông tin khách
+      </h2>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="email"
+        />
+      </div>
+      <input type="text" id="psid" name="psid" hidden />
+      <div class="form-group">
+        <label for="phoneNumber">phoneNumber</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          placeholder="phoneNumber"
+        />
+      </div>
+      <button class="btn btn-info p-2" id="btnFindOrder" type="">Submit</button>
+    </form>
+    <script src="/js/reserve_table.js"></script>
+  </body>
 </html>
