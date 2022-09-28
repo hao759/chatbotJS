@@ -325,7 +325,7 @@ let sendTypingOn = (sender_psid) => {
 
 let handleReserve = (req, res) => {
   let senderId=req.params.senderId;
-  return res.render("webView.ejs",senderId);
+  return res.render("webView.ejs",{senderId:senderId});
 };
 
 let handlePostReserve = async (req, res) => {
