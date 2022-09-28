@@ -24,7 +24,7 @@ console.log("-----2-------------------------------")
           console.log('Lỗi đặt bàn Eric bot', err);
         //run fall back
 
-          $("#psid").val(senderID);
+          $("#psid").val(senderId);
           handleClickButtonReserveTable();
       }
   );
