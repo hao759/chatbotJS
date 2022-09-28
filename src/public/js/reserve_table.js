@@ -60,9 +60,8 @@ function handleClickButtonReserveTable() {
     $("#btnFindOrder").on("click", function (e) {
       let check = true;
       // check=; //return true or false
-      console.log($("#customerName").val());
-      console.log($("#email").val());
-      console.log($("#phoneNumber").val());
+      console.log("handleClickButtonReserveTable");
+
       let data = {
         // psid: $("#psid").val(),
         customerName: $("#customerName").val(),
@@ -70,7 +69,7 @@ function handleClickButtonReserveTable() {
         phoneNumber: $("#phoneNumber").val(),
       };
 
-      if (!check) {
+      if (1) {
         //close webview
         MessengerExtensions.requestCloseBrowser(
           function success() {
