@@ -71,17 +71,17 @@ function handleClickButtonReserveTable() {
 
       if (1) {
         //close webview
-        MessengerExtensions.requestCloseBrowser(
-          function success() {
-            console.log("-------CloseBrowser---------");
-            // webview closed
-          },
-          function error(err) {
-            // an error occurred
-            console.log(err);
+        // MessengerExtensions.requestCloseBrowser(
+        //   function success() {
+        //     console.log("-------CloseBrowser---------");
+        //     // webview closed
+        //   },
+        //   function error(err) {
+        //     // an error occurred
+        //     console.log(err);
             
-          }
-        );
+        //   }
+        // );
         console.log("suc",data);
         //send data to node.js server
         $.ajax({
