@@ -331,7 +331,6 @@ let handleReserve = (req, res) => {
 };
 
 let handlePostReserve = async (req, res) => {
-  console.log("1")
   try {
     console.log("2")
     let customerName = "";
