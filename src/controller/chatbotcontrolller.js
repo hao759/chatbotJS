@@ -337,9 +337,6 @@ let handlePostReserve = async (req, res) => {
     // if (req.body.customerName === "") {
     //   customerName = "Empty";
     // } else customerName = req.body.customerName;
-
-    // I demo response with sample text
-    // you can check database for customer order's status
     console.log("3")
     let response1 = {
       text: `---Info about your lookup đặt bàn---
@@ -353,7 +350,7 @@ let handlePostReserve = async (req, res) => {
     console.log("4")
 
     return res.status(200).json({
-      message: "ok",
+      message: "ok1",
     });
   } catch (e) {
     console.log("Loi reserve table");
