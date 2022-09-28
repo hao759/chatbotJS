@@ -26,26 +26,26 @@ console.log("------------------------------------")
 
 //validate inputs
 function validateInputFields() {
-  const EMAIL_REG = /[a-zA-Z][a-zA-Z0-9_\.]{1,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}/g;
+//   const EMAIL_REG = /[a-zA-Z][a-zA-Z0-9_\.]{1,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}/g;
 
-  let email = $("#email");
-  let phoneNumber = $("#phoneNumber");
+//   let email = $("#email");
+//   let phoneNumber = $("#phoneNumber");
 
-  if (!email.val().match(EMAIL_REG)) {
-      email.addClass("is-invalid");
-      return true;
-  } else {
-      email.removeClass("is-invalid");
-  }
+//   if (!email.val().match(EMAIL_REG)) {
+//       email.addClass("is-invalid");
+//       return true;
+//   } else {
+//       email.removeClass("is-invalid");
+//   }
 
-  if (phoneNumber.val() === "") {
-      phoneNumber.addClass("is-invalid");
-      return true;
-  } else {
-      phoneNumber.removeClass("is-invalid");
-  }
+//   if (phoneNumber.val() === "") {
+//       phoneNumber.addClass("is-invalid");
+//       return true;
+//   } else {
+//       phoneNumber.removeClass("is-invalid");
+//   }
 
-  return false;
+  return true;// false;
 }
 
 
@@ -63,6 +63,7 @@ function handleClickButtonReserveTable() {
       if (!check) {
           //close webview
           MessengerExtensions.requestCloseBrowser(function success() {
+            console.log('err');
               // webview closed
           }, function error(err) {
               // an error occurred
