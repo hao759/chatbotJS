@@ -54,7 +54,6 @@ window.extAsyncInit = function () {
 // }
 
 function handleClickButtonReserve() {
-  
   $("#btnFindOrder").on("click", function (e) {
     console.log("vo dc handleClickButtonReserve")
     // let check = validateInputFields();
