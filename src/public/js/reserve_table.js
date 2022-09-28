@@ -50,7 +50,7 @@ function validateInputFields() {
 
 
 function handleClickButtonReserveTable() {
-  $("#btnReserveTable").on("click", function (e) {
+  $("#btnFindOrder").on("click", function (e) {
       let check = validateInputFields(); //return true or false
 
       let data = {
