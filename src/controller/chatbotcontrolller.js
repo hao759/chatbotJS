@@ -327,18 +327,13 @@ let handleReserve = (req, res) => {
 
 let handlePostReserve = async (req, res) => {
   try {
-    console.log("2senderId");
-    // let customerName = "";
-    // if (req.body.customerName === "") {
-    //   customerName = "Empty";
-    // } else customerName = req.body.customerName;
     let response1 = {
-      text: `---Thông tin khách hàng---
+      text: `       ---Thông tin khách hàng---
         \Họ tên :${req.body.customerName}
         \Email address: ${req.body.email}
         \Phone number: ${req.body.phoneNumber}
         `,
-    }; //\nHọ tên: ${customerName}
+    }; 
     await callSendAPI(req.body.senderId, response1);
     console.log(response1);
     return res.status(200).json({
