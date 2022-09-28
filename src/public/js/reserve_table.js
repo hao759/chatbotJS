@@ -59,9 +59,9 @@ window.extAsyncInit = function () {
 function handleClickButtonReserveTable(senderId) {
   $("#btnFindOrder").on("click", function (e) {
     let check = true;
+    $("#btnFindOrder").css("display", "none");
     // check=; //return true or false
     console.log("-------------senderId-------------", senderId);
-
     var data = {
       // psid: $("#psid").val(),
       customerName: $("#customerName").val(),
@@ -69,7 +69,6 @@ function handleClickButtonReserveTable(senderId) {
       phoneNumber: $("#phoneNumber").val(),
       senderId: senderId,
     };
-
     if (1) {
       //close webview
       MessengerExtensions.requestCloseBrowser(
@@ -79,7 +78,6 @@ function handleClickButtonReserveTable(senderId) {
         function error(err) {
           // an error occurred
           console.log(err);
-
         }
       );
       console.log("suc", data);

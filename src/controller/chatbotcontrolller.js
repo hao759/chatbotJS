@@ -2,11 +2,18 @@ require("dotenv").config();
 import request from "request";
 import chatbotService from "../services/chatbotService";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+
+
+
+const private_key= "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEI1bvlUZtNK1t\nGxUFedXM1uA2LJ+1jnxoFvIB/PnwHNq/My4FU5R3OYFx5um7DOxrCkgUTVk2HxFg\nhMyMiIOvr+qGUx8575VOftsKjJd/xB1JMx7ZdXsmkpSax2NjuFh+xZeLK4lhZ4ED\nQ1LZQDh1gLR06Qn4zcSeeAmAder825HmQz3b52XkIwSvDmDP79IBmMZhz7gkcqpm\n9/rukXcb9g0RoGIiYGFWwrC6xre6D3xMp6ynj+1IcglK1jYx7/IsejC+s0CVSOQ/\nDyQiZxQL9J+QT4knlfV52TdnO98/eWr3mZMqqXph6zP4iUfXoqE70//Rcfd86g4U\nlak86slvAgMBAAECggEARwopvcMKbBltSxxJA9+6AWQ+d0C4Y/EEvEq7Qt8Ww9If\npKrr20AHgRtR+ChTtc0bgDWMH9ZYHpMoHxZaY/g6AhMsVZSbtcdCA9lMisibQsqM\ndOvQG6FChpkGu/zF0eN+IgR9PAn7y0zK3Jyw0EFDccO5GLMjSnt04JTHlEChaQ2W\ntsAUTYoX7YtgThCOKIBfflH6dSJYmx/pzRhDS7KtdnKg2wbYPpUtl7BT+EKaFama\nV/Onf6wOa38W7F6uYmphsmpov5Bqrv5l46yjhoDGlhe2UTo7EHhluv/Bl0XkFzPi\nU2dVF5Xgwu5WB5a5r8hXbySKqtwsC1ct+ZoKImERcQKBgQD6nKgYRraqht8PxyUd\ngI69+Bq1pxjyM32wNJD88sYOETz4j867/dGDcL2He9/Itf0lBWsV9nrZ4UCvhdJf\nLtKS7bz6xrspryP8dViFrBqZkl7JWHDCO8LObjXXsswUE5vhW7EOiMGhxP8OcD/v\nesu388iXuxSJtRyJHpVTZ8giFwKBgQDIWt0xUiA53R3YOWcsdNRK+nmPRw8wsgWQ\nswsXF1QeCu1JSrjtXIFcvZavTkvznkFXW8rpVR/sountyWXdtWFLOERdYzY9aEMz\nijpgF38lCe0wjYSBM0qBnMPBH8MoF7VxzcJxNbZci85LaNnvR8bA0n1tE5AISh0e\ndAswDHhiaQKBgQDxeflOSvS/o21TmqPcpX7k9SdnWTbkSVEWc9AwqwzDiUCikI62\n/X7fk8ZLwcSDdTgScAIbC4CcaDsX5W4rYMZt5L1vNgYpyCR4oelGA+sthqfmgl1E\nCqlOl0syJ4oU3kAZCWy1gHhzE4pfszEn475f5XqnGRBVEDoKtXlVAG8KyQKBgHIr\n5VRPunF+4ZzvyS16PeekKFVPZwaWy7kTbkRwVMzx6RoU7KDGUClrGE05zuo6yn1f\nn5ernI+anreURuo6jADzRXH6MVR476KVKILNoPSYXYOHgXSmp9SIYrzQvsNAD3OU\njzM4Kn0+ZgZu75H9UvNaf4MC3Nb8dO9/rUhqMsfRAoGAavp2sQaXaldnndO1sXC2\ngUJuGCva/8Gzm7xJ/jOXp99X3a1v8dSOwOfo9puHbsHvxpVrrp+Fis1E9PhVL12Z\nhx9j9xEIJfmQAERFQ5tZtc4vUujdWlfk5Q1M9k7WYAzDpvWu2tJXmh2f4tuutj8A\nn41xUXvtuRQsm6SUHbE35Nw=\n-----END PRIVATE KEY-----\n"
+
+const client_email= "testchatbot@danitchatbot.iam.gserviceaccount.com"
+const Google_sheet="1iCH1hmsDYkUo26USOvOhf4_ezu3aJAtL01jAtLHCMAg"
+
 
 const url_img1 = "https://bit.ly/Miku001";
 const url_img2 = "https://bit.ly/chibisutu";
-
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 // let postWebHook = (req, res) => {
 let postWebhook = (req, res) => {
   // Parse the request body from the POST
