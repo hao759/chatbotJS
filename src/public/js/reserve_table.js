@@ -4,14 +4,14 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
   fjs.parentNode.insertBefore(js, fjs);
-  console.log("-----2-------------------------------")
+  console.log("-----1-------------------------------")
 }(document, 'script', 'Messenger'));
 
 
 
 window.extAsyncInit = function () {
   // the Messenger Extensions JS SDK is done loading 
-console.log("-----1-------------------------------")
+console.log("-----2-------------------------------")
   MessengerExtensions.getContext('661241558826141',
       function success(thread_context) {
         console.log("-------------3-----------------------")
@@ -54,7 +54,7 @@ console.log("-----1-------------------------------")
 
 
 function handleClickButtonReserveTable() {
-    // $("#btnFindOrder").on("click", function (e) {
+    $("#btnFindOrder").on("click", function (e) {
       let check = true;
       // check=; //return true or false
       console.log("----------------------");
@@ -91,8 +91,7 @@ function handleClickButtonReserveTable() {
           },
         });
       }
-    // }
-    // );
+    });
   }
 
 
