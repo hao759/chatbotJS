@@ -1,44 +1,81 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đặt bàn</title>
+    <title>Đặt bàn nhà hàng Eric</title>
+    <!-- Latest compiled and minified CSS -->
     <link
-      href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
       rel="stylesheet"
-      id="bootstrap-css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="src/public/css/style.css">
-    <script src="/js/reserve_table.js"></script>
+
+    <!-- Load custom Javascript and CSS-->
+    <link rel="stylesheet" href="src/public/css/style.css" />
   </head>
+
   <body>
-    <form style="margin: 100px 50px 10px 50px">
-      <h2 style="text-align: center; transform: translateY(-50px)">
-        Nhập thông tin khách
-      </h2>
-      <div class="form-group">
-        <label for="email">email</label>
-        <input
-          type="text"
-          class="form-control"
-          id="email"
-          placeholder="email"
-        />
+    <div class="container fix-height">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mt-3">
+            <span class="title">Thông tin khách hàng</span>
+          </div>
+          <input type="text" id="psid" hidden />
+          <div class="form-group">
+            <label for="customerName">Họ và tên:</label>
+            <input
+              type="text"
+              id="customerName"
+              class="form-control"
+              placeholder="Họ và tên..."
+              value="Lương Quốc Hào"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"
+              >Địa chỉ email (<span style="color: red">*</span>):</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Địa chỉ email..."
+              value="qhao1245@gmail.com"
+            />
+            <div class="invalid-feedback">Địa chỉ email không hợp lệ.</div>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber"
+              >Số điện thoại (<span style="color: red">*</span>):</label
+            >
+            <input
+              type="text"
+              id="phoneNumber"
+              class="form-control"
+              placeholder="Số điện thoại..."
+              value="453453464564"
+            />
+            <div class="invalid-feedback">Số điện thoại không hợp lệ.</div>
+          </div>
+          <button class="btn btn-primary" onclick="handleClickButtonReserveTable()" id="btnFindOrder">ĐẶT BÀN</button>
+        </div>
       </div>
-      <input type="text" id="psid" name="psid" hidden />
-      <div class="form-group">
-        <label for="phoneNumber">phoneNumber</label>
-        <input
-          type="text"
-          class="form-control"
-          id="phoneNumber"
-          placeholder="phoneNumber"
-        />
-      </div>
-      <button class="btn btn-info p-2" id="btnFindOrder" type="">Submit</button>
-    </form>
-    <script src="/js/reserve_table.js"></script>
+    </div>
+    <!-- <script>
+      function myFunction() {
+    $('#btnFindOrder').on("click", function (e) {
+      // check=; //return true or false
+      console.log("----------------------");})
+    }
+    </script> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
