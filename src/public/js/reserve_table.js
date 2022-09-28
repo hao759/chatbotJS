@@ -4,14 +4,17 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
   fjs.parentNode.insertBefore(js, fjs);
+  console.log("-----2-------------------------------")
 }(document, 'script', 'Messenger'));
+
+
 
 window.extAsyncInit = function () {
   // the Messenger Extensions JS SDK is done loading 
 console.log("-----1-------------------------------")
   MessengerExtensions.getContext('661241558826141',
       function success(thread_context) {
-        console.log("-------------2-----------------------")
+        console.log("-------------3-----------------------")
           // success
           //set psid to input
           $("#psid").val(thread_context.psid);
