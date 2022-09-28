@@ -67,6 +67,7 @@ function handleClickButtonReserveTable(senderId) {
         customerName: $("#customerName").val(),
         email: $("#email").val(),
         phoneNumber: $("#phoneNumber").val(),
+        senderId:senderId
       };
 
       if (1) {
@@ -88,7 +89,6 @@ function handleClickButtonReserveTable(senderId) {
           url: `${window.location.origin}/reserve-table-ajax`,
           method: "POST",
           data: data,
-          senderId:senderId,
           success: function (data) {
             console.log("fgf",data,"haha");
           },
