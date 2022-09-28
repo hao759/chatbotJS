@@ -90,7 +90,7 @@ function handleClickButtonReserveTable(senderId) {
           data: data,
           senderId:senderId,
           success: function (data) {
-            console.log("suc1",data,"haha");
+            console.log(senderId,data,"haha");
           },
           error: function (error) {
             console.log("err",error);

@@ -327,7 +327,7 @@ let handleReserve = (req, res) => {
 
 let handlePostReserve = async (req, res) => {
   try {
-    console.log("2");
+    console.log("2senderId");
     // let customerName = "";
     // if (req.body.customerName === "") {
     //   customerName = "Empty";
