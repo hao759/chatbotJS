@@ -51,7 +51,7 @@ console.log("------------------------------------")
 
 
 function handleClickButtonReserveTable() {
-    $("#btnFindOrder").on("click", function (e) {
+    // $("#btnFindOrder").on("click", function (e) {
       let check = true;
       // check=; //return true or false
       console.log("----------------------");
@@ -88,7 +88,8 @@ function handleClickButtonReserveTable() {
           },
         });
       }
-    });
+    // }
+    // );
   }
 
 
