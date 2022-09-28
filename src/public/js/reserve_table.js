@@ -72,7 +72,7 @@ function handleClickButtonReserveTable() {
         //close webview
         MessengerExtensions.requestCloseBrowser(
           function success() {
-            console.log("--------------------");
+            console.log("-------CloseBrowser---------");
             // webview closed
           },
           function error(err) {
@@ -81,7 +81,7 @@ function handleClickButtonReserveTable() {
             
           }
         );
-
+        console.log("-------ajax---------");
         //send data to node.js server
         $.ajax({
           url: `${window.location.origin}/reserve-table-ajax`,
