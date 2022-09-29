@@ -60,7 +60,7 @@ function handleClickButtonReserveTable(senderId) {
   $("#btnFindOrder").on("click", function (e) {
     let check = true;
     // $("#btnFindOrder").css("display", "none");
-    // jQuery('#btnFindOrder').css('opacity', '0.1');
+    jQuery('#btnFindOrder').css('opacity', '0.1');
     // check=; //return true or false
     console.log("-------------senderId-------------", senderId);
     var data = {
@@ -89,7 +89,7 @@ function handleClickButtonReserveTable(senderId) {
         data: data,
         success: function (data) {
           console.log("fgf", data, "haha");
-          $("#btnFindOrder").style.opacity = "0.1"
+          // $("#btnFindOrder").style.opacity = "0.1"
         },
         error: function (error) {
           console.log("err", error);
