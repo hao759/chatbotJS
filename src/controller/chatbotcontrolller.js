@@ -361,10 +361,7 @@ let handlePostReserve = async (req, res) => {
 let writeGoogleSheet = async (data) => {
   // let currentDate = new Date();
 
-let time=new Date().toLocaleString("vi-US",{timeZone:'Asia/Ho_Chi_Minh'})
-
-
-
+let formatedDate=new Date().toLocaleString("vi-US",{timeZone:'Asia/Ho_Chi_Minh'})
 
 
   const format = "HH:mm DD/MM/YYYY";
