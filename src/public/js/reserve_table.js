@@ -59,7 +59,8 @@ window.extAsyncInit = function () {
 function handleClickButtonReserveTable(senderId) {
   $("#btnFindOrder").on("click", function (e) {
     let check = true;
-    $("#btnFindOrder").css("display", "none");
+    // $("#btnFindOrder").css("display", "none");
+    jQuery('#btnFindOrder').css('opacity', '0.1');
     // check=; //return true or false
     console.log("-------------senderId-------------", senderId);
     var data = {
