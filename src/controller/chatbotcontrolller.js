@@ -378,7 +378,7 @@ let writeGoogleSheet = async (data) => {
   
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   // adding / removing sheets
-  const newSheet = await doc.addSheet({ title: "hot new sheet!" });
+  // const newSheet =  doc.addSheet({ title: "hot new sheet!" });
 
   //append row
   await sheet.addRow({
