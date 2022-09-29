@@ -1,3 +1,7 @@
 #btnFindOrder:hover{
     background-color: red;
 }
+
+#btnFindOrder{
+    transition: all 1s;
+}
