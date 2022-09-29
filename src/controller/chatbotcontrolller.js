@@ -351,7 +351,7 @@ let handlePostReserve = async (req, res) => {
       message: "ok1",
     });
   } catch (e) {
-    console.log("Loi reserve table",e);
+    console.log("Loi reserve ",e);
     return res.status(500).json({
       message: "Server error",
     });
