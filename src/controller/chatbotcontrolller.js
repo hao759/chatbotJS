@@ -368,7 +368,7 @@ let time=new Date().toLocaleString("vi-US",{timeZone:'Asia/Ho_Chi_Minh'})
 
 
   const format = "HH:mm DD/MM/YYYY";
-  let formatedDate = moment(time).format(format);
+  // let formatedDate = moment(time).format(format);
 
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
 
