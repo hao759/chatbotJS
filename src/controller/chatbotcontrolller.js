@@ -344,7 +344,7 @@ let handlePostReserve = async (req, res) => {
       email:req.body.email,
       phoneNumber:req.body.phoneNumber
     }
-    // await callSendAPI(req.body.senderId, response1);
+    await callSendAPI(req.body.senderId, response1);
     await writeGoogleSheet(data);
     console.log(response1);
     return res.status(200).json({
@@ -374,7 +374,6 @@ let writeGoogleSheet = async (data) => {
     client_email: JSON.parse(`"${GOOGLE_SERVICE_ACCOUNT_EMAIL}"`),
     private_key: JSON.parse(`"${GOOGLE_PRIVATE_KEY}"`),
   });
-  console.log("====================2==================")
   await doc.loadInfo(); // loads document properties and worksheets
   
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
