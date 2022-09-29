@@ -344,7 +344,7 @@ let handlePostReserve = async (req, res) => {
       email:req.body.email,
       phoneNumber:req.body.phoneNumber
     }
-    await callSendAPI(req.body.senderId, response1);
+    // await callSendAPI(req.body.senderId, response1);
     await writeGoogleSheet(data);
     console.log(response1);
     return res.status(200).json({
