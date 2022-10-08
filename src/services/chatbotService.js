@@ -289,19 +289,19 @@ let SendButton_Template = () => {
   return response;
 };
 
-// let sendGIF = () => {
-//   let response = {
-//     //  message: {
-//     attachment: {
-//       type: "image",
-//       payload: {
-//         url: Gif1,
-//         is_reusable: true,
-//       },
-//     },
-//   };
-//   return response;
-// };
+let sendGIF = () => {
+  let response = {
+    //  message: {
+    attachment: {
+      type: "image",
+      payload: {
+        url: Gif1,
+        is_reusable: true,
+      },
+    },
+  };
+  return response;
+};
 
 let handleBenhVien= (sender_psid) => {
   let response = {
