@@ -103,8 +103,6 @@ let handleGetStarted = (sender_psid) => {
       let response2 = sendGIF();
       await callSendAPI(sender_psid, response2);
 
-
-      await sendVideo1(sender_psid);
       await sendVideo(sender_psid);
 
       resole("done");
@@ -327,23 +325,7 @@ let sendVideo = (sender_psid) => {
   callSendAPI(sender_psid, message);
 };
 
-let sendVideo1 = (sender_psid) => {
-  let message = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-         "template_type": "media",
-         "elements": [
-            {
-               "media_type": "video",
-               "url": "https://www.facebook.com/100086439574330/videos/1577689412683918"
-            }
-         ]
-      }
-    }    
-  }
-  callSendAPI(sender_psid, message);
-};
+
 
 let handleBenhVien = (sender_psid) => {
   let response = {
