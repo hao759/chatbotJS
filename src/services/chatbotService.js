@@ -445,5 +445,5 @@ module.exports = {
   handleBacSi,
   handleBenhVien,
   sendVideo,
-  sendVideo1,
+  
 };
