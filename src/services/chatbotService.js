@@ -103,7 +103,7 @@ let handleGetStarted = (sender_psid) => {
       let response2 = sendGIF();
       await callSendAPI(sender_psid, response2);
 
-      await sendVideo(sender_psid);
+      sendVideo(sender_psid);
 
       resole("done");
     } catch (error) {
@@ -307,21 +307,21 @@ let sendGIF = () => {
   return response;
 };
 
-let sendVideo = (sender_psid) => {
+let sendVideo = (sender_psid) => {//day du """"
   let message = {
-    attachment: {
-      type: "template",
-      payload: {
-        template_type: "media",
-        elements: [
-          {
-            media_type: "video",
-            url: "https://www.facebook.com/100086439574330/videos/548287560390373",
-          },
-        ],
-      },
-    },
-  };
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "video",
+               "url": "https://www.facebook.com/100086439574330/videos/548287560390373"
+            }
+         ]
+      }
+    }    
+  }
   callSendAPI(sender_psid, message);
 };
 
