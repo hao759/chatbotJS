@@ -70,7 +70,7 @@ let handleGetStarted = (sender_psid) => {
 };
 
 let sendButtonTemplateHello= (sender_psid)=>{
-  "message"={//dau : sai
+  message={//dau : sai
     "attachment":{
       "type":"template",
       "payload":{
@@ -87,7 +87,7 @@ let sendButtonTemplateHello= (sender_psid)=>{
       }
     }
   }
-  callSendAPI(sender_psid);
+  callSendAPI(sender_psid,message);
 }
 
 let getUserName = (sender_psid) => {
