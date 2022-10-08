@@ -53,9 +53,11 @@ let handleGetStarted = (sender_psid) => {
         response = {
           text: `Hello bạn :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
         };
+
+
       // let response1 = sendImage(sender_psid);
       let response2 = sendGIF();
-
+      sendButtonTemplateHello(sender_psid)
       await callSendAPI(sender_psid, response);
       // await callSendAPI(sender_psid, response1);
       await callSendAPI(sender_psid, response2);
@@ -66,6 +68,27 @@ let handleGetStarted = (sender_psid) => {
     }
   });
 };
+
+let sendButtonTemplateHello= (sender_psid)=>{
+  "message"={//dau : sai
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://www.messenger.com",
+            "title":"Visit Messenger"
+          },
+         
+        ]
+      }
+    }
+  }
+  callSendAPI(sender_psid);
+}
 
 let getUserName = (sender_psid) => {
   return new Promise((resole, reject) => {

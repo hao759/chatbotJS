@@ -3,7 +3,7 @@ import request from "request";
 import chatbotService from "../services/chatbotService";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-import moment from "moment";
+// import moment from "moment";
 
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 const GOOGLE_SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
@@ -71,7 +71,6 @@ let getWebHook = (req, res) => {
 };
 //
 
-// Handles messages events
 function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
@@ -198,6 +197,9 @@ async function handlePostback(sender_psid, received_postback) {
   callSendAPI(sender_psid, response);
 }
 
+
+
+
 // Sends response messages via the Send API
 async function callSendAPI(sender_psid, response) {
   // Construct the message body
@@ -226,6 +228,9 @@ async function callSendAPI(sender_psid, response) {
     }
   );
 }
+
+
+
 
 let setupProfile = async (req, res) => {
   //????????????????
@@ -339,11 +344,11 @@ let handlePostReserve = async (req, res) => {
         \Phone number: ${req.body.phoneNumber}
         `,
     };
-    let data={
-      customerName:req.body.customerName,
-      email:req.body.email,
-      phoneNumber:req.body.phoneNumber
-    }
+    let data = {
+      customerName: req.body.customerName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+    };
     await callSendAPI(req.body.senderId, response1);
     await writeGoogleSheet(data);
     console.log(response1);
@@ -351,7 +356,7 @@ let handlePostReserve = async (req, res) => {
       message: "ok1",
     });
   } catch (e) {
-    console.log("Loi reserve ",e);
+    console.log("Loi reserve ", e);
     return res.status(500).json({
       message: "Server error",
     });
@@ -361,8 +366,9 @@ let handlePostReserve = async (req, res) => {
 let writeGoogleSheet = async (data) => {
   // let currentDate = new Date();
 
-let formatedDate=new Date().toLocaleString("vi-US",{timeZone:'Asia/Ho_Chi_Minh'})
-
+  let formatedDate = new Date().toLocaleString("vi-US", {
+    timeZone: "Asia/Ho_Chi_Minh",
+  });
 
   const format = "HH:mm DD/MM/YYYY";
   // let formatedDate = moment(time).format(format);
@@ -372,13 +378,11 @@ let formatedDate=new Date().toLocaleString("vi-US",{timeZone:'Asia/Ho_Chi_Minh'}
   // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
   console.log("====================1==================");
   await doc.useServiceAccountAuth({
-   
-   
     client_email: JSON.parse(`"${GOOGLE_SERVICE_ACCOUNT_EMAIL}"`),
     private_key: JSON.parse(`"${GOOGLE_PRIVATE_KEY}"`),
   });
   await doc.loadInfo(); // loads document properties and worksheets
-  
+
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   // adding / removing sheets
   // const newSheet =  doc.addSheet({ title: "hot new sheet!" });
