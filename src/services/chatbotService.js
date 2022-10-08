@@ -103,7 +103,7 @@ let handleGetStarted = (sender_psid) => {
       let response2 = sendGIF();
       await callSendAPI(sender_psid, response2);
 
-      // sendVideo(sender_psid);
+      sendVideo(sender_psid);
 
       resole("done");
     } catch (error) {
