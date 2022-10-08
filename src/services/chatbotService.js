@@ -312,7 +312,7 @@ let handleBacSi = (sender_psid) => {
           },
           {
             title: BsNTHAn[0],
-            subtitle: BsNTHAnBsNTHAn[1],
+            subtitle: BsNTHAn[1],
             image_url: BsNTHAn[2],
             buttons: [
               {
