@@ -282,6 +282,19 @@ let handleBacSi = (sender_psid) => {
         template_type: "generic",
         elements: [
           {
+            title: BsTMKhuyen[0],
+            subtitle: BsTMKhuyen[1],
+            image_url: BsTMKhuyen[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: BsTMKhuyen[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+          {
             title: BsHung[0],
             subtitle: BsHung[1],
             image_url: BsHung[2],
@@ -310,19 +323,7 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-          {
-            title: BsTMKhuyen[0],
-            subtitle: BsTMKhuyen[1],
-            image_url: BsTMKhuyen[2],
-            buttons: [
-              {
-                type: "web_url",
-                title: "Xem chi tiết",
-                url: BsTMKhuyen[3],
-                webview_height_ratio: "full",
-              },
-            ],
-          },
+         
         ],
       },
     },
