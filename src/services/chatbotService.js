@@ -287,18 +287,18 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-          {
-            title: "Hay này hả? >.<",
-            subtitle: "Chắc là vậy T_T",
-            image_url: attachment_url,
-            buttons: [
-              {
-                type: "postback", //chạy vo ham handlePostBack
-                title: "MAIN_MENU",
-                payload: "MAIN_MENU",
-              },
-            ],
-          },
+          // {
+          //   title: "Hay này hả? >.<",
+          //   subtitle: "Chắc là vậy T_T",
+          //   image_url: attachment_url,
+          //   buttons: [
+          //     {
+          //       type: "postback", //chạy vo ham handlePostBack
+          //       title: "MAIN_MENU",
+          //       payload: "MAIN_MENU",
+          //     },
+          //   ],
+          // },
         ],
       },
     },
