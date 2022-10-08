@@ -188,6 +188,9 @@ async function handlePostback(sender_psid, received_postback) {
     case "MAIN_MENU":
       await chatbotService.handleSendMenu(sender_psid);
       break;
+      case "BacSi":
+      await chatbotService.handleBacSi(sender_psid);
+      break;
 
     default:
       response = { text: "Oop :), default " };

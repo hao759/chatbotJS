@@ -15,6 +15,13 @@ const imgZed =
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
+const BsHung=["Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng","Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương \nBác sĩ từng công tác tại Bệnh viện Da liễu Trung ương","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg"]
+
+
+
+
+
+
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -49,7 +56,6 @@ let handleGetStarted = (sender_psid) => {
       //   text: "Hello ",userName=="undefined undefined"?`${userName}`:"bạn", ":), started rồi đó. Gửi mình cái ảnh hay text thử đi",
       // }
 
-
       if (userName != "undefined undefined")
         response = {
           text: `Hello ${userName} :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
@@ -59,12 +65,11 @@ let handleGetStarted = (sender_psid) => {
           text: `Hello bạn :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
         };
 
+      callSendAPI(sender_psid, response);
 
       // let response1 = sendImage(sender_psid);
-      sendButtonTemplateHello(sender_psid)
-       callSendAPI(sender_psid, response);
+      sendButtonTemplateHello(sender_psid);
       // let response2 = sendGIF();
-
       // await callSendAPI(sender_psid, response2);
 
       resole("done");
@@ -74,31 +79,31 @@ let handleGetStarted = (sender_psid) => {
   });
 };
 
-let sendButtonTemplateHello= (sender_psid)=>{
-  let message={//dau : sai
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"Xin chào tôi có thể giúp gì bạn?",
-        "buttons":[
+let sendButtonTemplateHello = (sender_psid) => {
+  let message = {
+    //dau : sai
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "button",
+        text: "Xin chào tôi có thể giúp gì bạn?",
+        buttons: [
           {
-            "type":"web_url",
-            "url":"https://www.messenger.com",
-            "title":"Visit Messenger"
+            type: "web_url",
+            url: "https://www.messenger.com",
+            title: "Visit Messenger",
           },
           {
             type: "postback", //chạy vo ham handlePostBack
             title: "Cho tôi xem MAIN_MENU",
             payload: "MAIN_MENU",
           },
-         
-        ]
-      }
-    }
-  }
-  callSendAPI(sender_psid,message);
-}
+        ],
+      },
+    },
+  };
+  callSendAPI(sender_psid, message);
+};
 
 let getUserName = (sender_psid) => {
   return new Promise((resole, reject) => {
@@ -174,14 +179,14 @@ let getMainMenuTemplate = () => {
         template_type: "generic",
         elements: [
           {
-            title: "Katarina ",
+            title: "Bác sĩ ",
             subtitle: "Bông sen tử thần",
             image_url: imgKatarina,
             buttons: [
               {
                 type: "postback",
-                title: "Ukm ;)",
-                payload: "yes",
+                title: "Xem Bác Sĩ",
+                payload: "BacSi",
               },
             ],
           },
@@ -207,13 +212,7 @@ let getMainMenuTemplate = () => {
             subtitle: "Mega Lucario",
             image_url:
               "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
-            // buttons: [
-            //   {
-            //     type: "postback",
-            //     title: "Ukm ;)",
-            //     payload: "yes",
-            //   },
-            // ],
+
           },
         ],
       },
@@ -255,18 +254,56 @@ let SendButton_Template = () => {
   return response;
 };
 
-let sendGIF = () => {
+// let sendGIF = () => {
+//   let response = {
+//     //  message: {
+//     attachment: {
+//       type: "image",
+//       payload: {
+//         url: Gif1,
+//         is_reusable: true,
+//       },
+//     },
+//   };
+//   return response;
+// };
+
+let handleBacSi = (sender_psid) => {
   let response = {
-    //  message: {
     attachment: {
-      type: "image",
+      type: "template",
       payload: {
-        url: Gif1,
-        is_reusable: true,
+        template_type: "generic",
+        elements: [
+          {
+            title: "BsHung[0]>.<",
+            subtitle: "BsHung[1]",
+            image_url: "BsHung[2]",
+            buttons: [
+              {
+                type: "postback",
+                title: "Ukm ;)",
+                payload: "yes",
+              },
+            ],
+          },
+          {
+            title: "Hay này hả? >.<",
+            subtitle: "Chắc là vậy T_T",
+            image_url: attachment_url,
+            buttons: [
+              {
+                type: "postback", //chạy vo ham handlePostBack
+                title: "MAIN_MENU",
+                payload: "MAIN_MENU",
+              },
+            ],
+          },
+        ],
       },
     },
   };
-  return response;
+  callSendAPI(sender_psid, response);
 };
 
 module.exports = {
@@ -274,4 +311,5 @@ module.exports = {
   callSendAPI,
   handleSendMenu,
   sendImage,
+  handleBacSi,
 };
