@@ -18,14 +18,16 @@ const Gif1 =
 const BsHung = [
   "Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng",
   "Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương ",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg","https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
 ];
 
 const BsNTHAn = [
   "Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An",
   "Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/090559-pgs-nguyen-thi-hoai-an_yh0mzj.jpg",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/090559-pgs-nguyen-thi-hoai-an_yh0mzj.jpg","https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html"
 ];
+
+const BsTMKhuyen=["Bác sĩ Chuyên khoa II Trần Minh Khuyên","Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/105401-bsckii-tran-minh-khuyen_ukkwzs.jpg","https://bookingcare.vn/bac-si-chuyen-khoa-ii-tran-minh-khuyen-d1466.html"]
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -287,7 +289,7 @@ let handleBacSi = (sender_psid) => {
               {
                 type: "web_url",
                 title: "Xem chi tiết",
-                url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
+                url: BsHung[3],
                 webview_height_ratio: "full",
                 // type: "postback",
                 //   title: "Ukm ;)",
@@ -295,27 +297,32 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-          // {
-          //   title: BsNTHAn[0],
-          //   subtitle: BsNTHAn[1],
-          //   image_url: BsNTHAn[2],
-          //   buttons: [
-          //     {
-          //       type: "web_url",
-          //       url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
-          //       title: "Xem thêm chi tiết;)",
-          //       webview_height_ratio: "tall",
-          //       messenger_extensions: true, //mo tren tag do
-          //     },
-          //   ],
-          // },
-          // {
-          //   type: "web_url",
-          //   url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
-          //   title: "Xem thêm chi tiết;)",
-          //   webview_height_ratio: "tall",
-          //   messenger_extensions: true, //mo tren tag do
-          // },
+          {
+            title: BsNTHAn[0],
+            subtitle: BsNTHAnBsNTHAn[1],
+            image_url: BsNTHAn[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: BsNTHAn[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+          {
+            title: BsTMKhuyen[0],
+            subtitle: BsTMKhuyen[1],
+            image_url: BsTMKhuyen[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: BsTMKhuyen[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
         ],
       },
     },
