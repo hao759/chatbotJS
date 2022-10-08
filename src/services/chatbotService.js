@@ -15,12 +15,17 @@ const imgZed =
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
-const BsHung=["Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng","Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương \nBác sĩ từng công tác tại Bệnh viện Da liễu Trung ương","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg"]
+const BsHung = [
+  "Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng",
+  "Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương ",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg",
+];
 
-
-
-
-
+const BsNTHAn = [
+  "Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An",
+  "Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/090559-pgs-nguyen-thi-hoai-an_yh0mzj.jpg",
+];
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -212,7 +217,6 @@ let getMainMenuTemplate = () => {
             subtitle: "Mega Lucario",
             image_url:
               "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
-
           },
         ],
       },
@@ -281,24 +285,33 @@ let handleBacSi = (sender_psid) => {
             image_url: BsHung[2],
             buttons: [
               {
-                type: "postback",
-                title: "Ukm ;)",
-                payload: "yes",
+                type: "web_url",
+                url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
+                title: "Xem thêm chi tiết;)",
+                webview_height_ratio: "tall",
+                messenger_extensions: true, //mo tren tag do
               },
             ],
           },
-          // {
-          //   title: "Hay này hả? >.<",
-          //   subtitle: "Chắc là vậy T_T",
-          //   image_url: attachment_url,
-          //   buttons: [
-          //     {
-          //       type: "postback", //chạy vo ham handlePostBack
-          //       title: "MAIN_MENU",
-          //       payload: "MAIN_MENU",
-          //     },
-          //   ],
-          // },
+          {
+            title: BsNTHAn[0],
+            subtitle: BsNTHAn[1],
+            image_url: BsNTHAn[2],
+            buttons: [
+              {
+                type: "postback", //chạy vo ham handlePostBack
+                title: "Xem chi tiết",
+                payload: "MAIN_MENU",
+              },
+            ],
+          },
+          {
+            type: "web_url",
+            url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
+            title: "Để lại danh tính ;)",
+            webview_height_ratio: "tall",
+            messenger_extensions: true, //mo tren tag do
+          },
         ],
       },
     },
