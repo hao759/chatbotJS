@@ -69,6 +69,7 @@ let callSendAPI = (sender_psid, response) => {
       json: request_body,
     },
     (err, res, body) => {
+      console.log("---------",body,"-------");
       if (!err) {
         console.log("message sent!");
       } else {
@@ -290,7 +291,6 @@ let SendButton_Template = () => {
   return response;
 };
 
-
 let sendGIF = () => {
   let response = {
     //  message: {
@@ -306,25 +306,25 @@ let sendGIF = () => {
 };
 
 let sendVideo = (sender_psid) => {
-  let message={
-    "attachment": {
-      "type": "template",
-      "payload": {
-         "template_type": "media",
-         "elements": [
-            {
-               "media_type": "video",
-               "url": "https://www.facebook.com/ttieuviem/videos/564789738467642"
-            },
-            
-         ]
-      }
-    }    
-  }
-  callSendAPI(sender_psid,message)
-}
+  let message = {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "video",
+            url: "https://www.facebook.com/ttieuviem/videos/564789738467642",
+          },
+        ],
+      },
+    },
+  };
+  callSendAPI(sender_psid, message);
+};
+
 let sendVideo1 = (sender_psid) => {
-  let message={
+  let message = {
     "attachment": {
       "type": "template",
       "payload": {
@@ -332,15 +332,14 @@ let sendVideo1 = (sender_psid) => {
          "elements": [
             {
                "media_type": "video",
-               "url": "https://www.facebook.com/P.1500xyz/videos/692302555070593"
-            },
-            
+               "attachment_id": "https://www.facebook.com/100086439574330/videos/1577689412683918"
+            }
          ]
       }
     }    
   }
-  callSendAPI(sender_psid,message)
-}
+  callSendAPI(sender_psid, message);
+};
 
 let handleBenhVien = (sender_psid) => {
   let response = {
@@ -460,5 +459,7 @@ module.exports = {
   handleSendMenu,
   sendImage,
   handleBacSi,
-  handleBenhVien,sendVideo,sendVideo1
+  handleBenhVien,
+  sendVideo,
+  sendVideo1,
 };
