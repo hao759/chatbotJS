@@ -4,14 +4,11 @@ import request from "request";
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-
 const url_img2 = "https://bit.ly/chibisutu";
 const imgKatarina =
   "https://ecdn.game4v.com/g4v-content/uploads/2021/03/LMHT-Toc-Chien-ra-mat-Katarina-GAME4V.jpg";
-
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
-
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
@@ -43,8 +40,18 @@ const BsHQHung = [
   "https://bookingcare.vn/bac-si-chuyen-khoa-ii-ha-quoc-hung-d595.html",
 ];
 
-const BvDHYDuoc=["Phòng khám Bệnh viện Đại học Y Dược 1","20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/112414-pk-dhyd1_qb52hf.jpg","https://bookingcare.vn/phong-kham-benh-vien-dai-hoc-y-duoc-1-p154.html"]
-const BVPKhamDaKSaiGon=["Phòng khám Đa khoa Saigon Healthcare","45 Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/101727-anh-sg-toan-dien-ben-ngoai_ghclzw.jpg","https://bookingcare.vn/phong-kham-da-khoa-saigon-healthcare-p252.html"]
+const BvDHYDuoc = [
+  "Phòng khám Bệnh viện Đại học Y Dược 1",
+  "20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/112414-pk-dhyd1_qb52hf.jpg",
+  "https://bookingcare.vn/phong-kham-benh-vien-dai-hoc-y-duoc-1-p154.html",
+];
+const BVPKhamDaKSaiGon = [
+  "Phòng khám Đa khoa Saigon Healthcare",
+  "45 Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/101727-anh-sg-toan-dien-ben-ngoai_ghclzw.jpg",
+  "https://bookingcare.vn/phong-kham-da-khoa-saigon-healthcare-p252.html",
+];
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -90,7 +97,6 @@ let handleGetStarted = (sender_psid) => {
       //   };
       // callSendAPI(sender_psid, response);
 
-
       // let response1 = sendImage(sender_psid);
       sendButtonTemplateHello(sender_psid);
       let response2 = sendGIF();
@@ -112,11 +118,6 @@ let sendButtonTemplateHello = (sender_psid) => {
         template_type: "button",
         text: "Xin chào tôi có thể giúp gì bạn?",
         buttons: [
-          {
-            type: "web_url",
-            url: "https://www.messenger.com",
-            title: "Visit Messenger",
-          },
           {
             type: "postback", //chạy vo ham handlePostBack
             title: "Xem MAIN_MENU",
@@ -262,7 +263,7 @@ let sendImage = () => {
     attachment: {
       type: "image",
       payload: {
-        url: url_img2, //"https://www.facebook.com/P.1500.Monster/videos/824824665207473",
+        url: url_img2,
         is_reusable: true,
       },
     },
@@ -289,6 +290,7 @@ let SendButton_Template = () => {
   return response;
 };
 
+
 let sendGIF = () => {
   let response = {
     //  message: {
@@ -303,7 +305,25 @@ let sendGIF = () => {
   return response;
 };
 
-let handleBenhVien= (sender_psid) => {
+let sendVideo = (sender_psid) => {
+  let message={
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "<image|video>",
+               "url": "https://www.facebook.com/ttieuviem/videos/564789738467642/"
+            }
+         ]
+      }
+    }    
+  }
+  callSendAPI(sender_psid,message)
+}
+
+let handleBenhVien = (sender_psid) => {
   let response = {
     attachment: {
       type: "template",
@@ -344,7 +364,7 @@ let handleBenhVien= (sender_psid) => {
     },
   };
   callSendAPI(sender_psid, response);
-}
+};
 
 let handleBacSi = (sender_psid) => {
   let response = {
@@ -420,5 +440,6 @@ module.exports = {
   callSendAPI,
   handleSendMenu,
   sendImage,
-  handleBacSi,handleBenhVien
+  handleBacSi,
+  handleBenhVien,sendVideo
 };
