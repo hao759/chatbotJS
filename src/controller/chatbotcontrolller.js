@@ -181,6 +181,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
       await chatbotService.sendVideo(sender_psid);
+      await chatbotService.sendVideo1(sender_psid);
       break;
 
     case "MAIN_MENU":

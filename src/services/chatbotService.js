@@ -313,9 +313,28 @@ let sendVideo = (sender_psid) => {
          "template_type": "media",
          "elements": [
             {
-               "media_type": "<image|video>",
-               "url": "https://www.facebook.com/ttieuviem/videos/564789738467642/"
-            }
+               "media_type": "video",
+               "url": "https://www.facebook.com/ttieuviem/videos/564789738467642"
+            },
+            
+         ]
+      }
+    }    
+  }
+  callSendAPI(sender_psid,message)
+}
+let sendVideo1 = (sender_psid) => {
+  let message={
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "video",
+               "url": "https://www.facebook.com/P.1500xyz/videos/692302555070593"
+            },
+            
          ]
       }
     }    
@@ -441,5 +460,5 @@ module.exports = {
   handleSendMenu,
   sendImage,
   handleBacSi,
-  handleBenhVien,sendVideo
+  handleBenhVien,sendVideo,sendVideo1
 };
