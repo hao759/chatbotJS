@@ -318,7 +318,7 @@ let sendVideo = (sender_psid) => {
          "elements": [
             {
                "media_type": "video",
-               "url": "https://www.facebook.com/ttieuviem/videos/564789738467642"
+               "url": "https://www.facebook.com/100086439574330/videos/548287560390373"
             }
          ]
       }
