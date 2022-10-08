@@ -293,20 +293,20 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-          {
-            title: BsNTHAn[0],
-            subtitle: BsNTHAn[1],
-            image_url: BsNTHAn[2],
-            buttons: [
-              {
-                type: "web_url",
-                url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
-                title: "Xem thêm chi tiết;)",
-                webview_height_ratio: "tall",
-                messenger_extensions: true, //mo tren tag do
-              },
-            ],
-          },
+          // {
+          //   title: BsNTHAn[0],
+          //   subtitle: BsNTHAn[1],
+          //   image_url: BsNTHAn[2],
+          //   buttons: [
+          //     {
+          //       type: "web_url",
+          //       url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
+          //       title: "Xem thêm chi tiết;)",
+          //       webview_height_ratio: "tall",
+          //       messenger_extensions: true, //mo tren tag do
+          //     },
+          //   ],
+          // },
           // {
           //   type: "web_url",
           //   url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
