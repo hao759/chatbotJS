@@ -75,9 +75,6 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
-    // response = {
-    //   text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
-    // };
     switch (received_message.text) {
       case "cc":
         response = {

@@ -29,6 +29,8 @@ const BsNTHAn = [
 
 const BsTMKhuyen=["Bác sĩ Chuyên khoa II Trần Minh Khuyên","Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/105401-bsckii-tran-minh-khuyen_ukkwzs.jpg","https://bookingcare.vn/bac-si-chuyen-khoa-ii-tran-minh-khuyen-d1466.html"]
 
+const BsHQHung=["Bác sĩ Chuyên khoa II Hà Quốc Hùng","Gần 30 năm kinh nghiệm khám và điều trị chuyên sâu về các bệnh lý Nội khoa - Cơ xương khớp","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/172821thac-si-bac-si-ha-quoc-hung_ehbmcu.jpg","https://bookingcare.vn/bac-si-chuyen-khoa-ii-ha-quoc-hung-d595.html"]
+
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -104,6 +106,13 @@ let sendButtonTemplateHello = (sender_psid) => {
             type: "postback", //chạy vo ham handlePostBack
             title: "Cho tôi xem MAIN_MENU",
             payload: "MAIN_MENU",
+          },
+          {
+            type: "web_url",
+            url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
+            title: "Để lại thông tin để tư vấn ;)",
+            webview_height_ratio: "tall",
+            messenger_extensions: true, //mo tren tag do
           },
         ],
       },
@@ -319,6 +328,19 @@ let handleBacSi = (sender_psid) => {
                 type: "web_url",
                 title: "Xem chi tiết",
                 url: BsNTHAn[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+          {
+            title: BsHQHung[0],
+            subtitle: BsHQHung[1],
+            image_url: BsHQHung[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: BsHQHung[3],
                 webview_height_ratio: "full",
               },
             ],
