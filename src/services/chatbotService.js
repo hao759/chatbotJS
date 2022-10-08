@@ -69,7 +69,7 @@ let callSendAPI = (sender_psid, response) => {
       json: request_body,
     },
     (err, res, body) => {
-      console.log("---------",body,"-------");
+      console.log("---------", body, "-------");
       if (!err) {
         console.log("message sent!");
       } else {
@@ -309,23 +309,21 @@ let sendGIF = () => {
 
 let sendVideo = (sender_psid) => {
   let message = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-         "template_type": "media",
-         "elements": [
-            {
-               "media_type": "video",
-               "url": "https://www.facebook.com/100086439574330/videos/548287560390373"
-            }
-         ]
-      }
-    }    
-  }
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "video",
+            url: "https://www.facebook.com/100086439574330/videos/548287560390373",
+          },
+        ],
+      },
+    },
+  };
   callSendAPI(sender_psid, message);
 };
-
-
 
 let handleBenhVien = (sender_psid) => {
   let response = {
