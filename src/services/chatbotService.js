@@ -285,11 +285,14 @@ let handleBacSi = (sender_psid) => {
             image_url: BsHung[2],
             buttons: [
               {
-                type: "web_url",
-                url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
-                title: "Xem thêm chi tiết;)",
-                webview_height_ratio: "tall",
-                messenger_extensions: true, //mo tren tag do
+                // type: "web_url",
+                // url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
+                // title: "Xem thêm chi tiết;)",
+                // webview_height_ratio: "tall",
+                // messenger_extensions: true, //mo tren tag do
+                type: "postback",
+                  title: "Ukm ;)",
+                  payload: "yes",
               },
             ],
           },
