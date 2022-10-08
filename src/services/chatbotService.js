@@ -307,10 +307,10 @@ let handleBacSi = (sender_psid) => {
           },
           {
             type: "web_url",
-            url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
-            title: "Để lại danh tính ;)",
-            webview_height_ratio: "tall",
-            messenger_extensions: true, //mo tren tag do
+                url: "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
+                title: "Xem thêm chi tiết;)",
+                webview_height_ratio: "tall",
+                messenger_extensions: true, //mo tren tag do
           },
         ],
       },
