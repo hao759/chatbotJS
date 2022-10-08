@@ -276,9 +276,9 @@ let handleBacSi = (sender_psid) => {
         template_type: "generic",
         elements: [
           {
-            title: "BsHung[0]>.<",
-            subtitle: "BsHung[1]",
-            image_url: "BsHung[2]",
+            title: BsHung[0],
+            subtitle: BsHung[1],
+            image_url: BsHung[2],
             buttons: [
               {
                 type: "postback",
