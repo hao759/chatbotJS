@@ -311,19 +311,19 @@ let sendGIF = () => {
 
 let sendVideo = (sender_psid) => {
   let message = {
-    attachment: {
-      type: "template",
-      payload: {
-        template_type: "media",
-        elements: [
-          {
-            media_type: "video",
-            url: "https://www.facebook.com/ttieuviem/videos/564789738467642",
-          },
-        ],
-      },
-    },
-  };
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "video",
+               "url": "https://www.facebook.com/ttieuviem/videos/564789738467642"
+            }
+         ]
+      }
+    }    
+  }
   callSendAPI(sender_psid, message);
 };
 
