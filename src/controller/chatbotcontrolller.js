@@ -185,8 +185,11 @@ async function handlePostback(sender_psid, received_postback) {
     case "MAIN_MENU":
       await chatbotService.handleSendMenu(sender_psid);
       break;
-      case "BacSi":
+    case "BacSi":
       await chatbotService.handleBacSi(sender_psid);
+      break;
+    case "BenhVien":
+      await chatbotService.handleBenhVien(sender_psid);
       break;
 
     default:
@@ -196,9 +199,6 @@ async function handlePostback(sender_psid, received_postback) {
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 }
-
-
-
 
 // Sends response messages via the Send API
 async function callSendAPI(sender_psid, response) {
@@ -228,9 +228,6 @@ async function callSendAPI(sender_psid, response) {
     }
   );
 }
-
-
-
 
 let setupProfile = async (req, res) => {
   //????????????????

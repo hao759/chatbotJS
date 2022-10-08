@@ -18,18 +18,33 @@ const Gif1 =
 const BsHung = [
   "Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng",
   "Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương ",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg","https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg",
+  "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
 ];
 
 const BsNTHAn = [
   "Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An",
   "Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/090559-pgs-nguyen-thi-hoai-an_yh0mzj.jpg","https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html"
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/090559-pgs-nguyen-thi-hoai-an_yh0mzj.jpg",
+  "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
 ];
 
-const BsTMKhuyen=["Bác sĩ Chuyên khoa II Trần Minh Khuyên","Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/105401-bsckii-tran-minh-khuyen_ukkwzs.jpg","https://bookingcare.vn/bac-si-chuyen-khoa-ii-tran-minh-khuyen-d1466.html"]
+const BsTMKhuyen = [
+  "Bác sĩ Chuyên khoa II Trần Minh Khuyên",
+  "Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/105401-bsckii-tran-minh-khuyen_ukkwzs.jpg",
+  "https://bookingcare.vn/bac-si-chuyen-khoa-ii-tran-minh-khuyen-d1466.html",
+];
 
-const BsHQHung=["Bác sĩ Chuyên khoa II Hà Quốc Hùng","Gần 30 năm kinh nghiệm khám và điều trị chuyên sâu về các bệnh lý Nội khoa - Cơ xương khớp","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/172821thac-si-bac-si-ha-quoc-hung_ehbmcu.jpg","https://bookingcare.vn/bac-si-chuyen-khoa-ii-ha-quoc-hung-d595.html"]
+const BsHQHung = [
+  "Bác sĩ Chuyên khoa II Hà Quốc Hùng",
+  "Gần 30 năm kinh nghiệm khám và điều trị chuyên sâu về các bệnh lý Nội khoa - Cơ xương khớp",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/172821thac-si-bac-si-ha-quoc-hung_ehbmcu.jpg",
+  "https://bookingcare.vn/bac-si-chuyen-khoa-ii-ha-quoc-hung-d595.html",
+];
+
+const BvDHYDuoc=["Phòng khám Bệnh viện Đại học Y Dược 1","20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/112414-pk-dhyd1_qb52hf.jpg","https://bookingcare.vn/phong-kham-benh-vien-dai-hoc-y-duoc-1-p154.html"]
+const BVPKhamDaKSaiGon=["Phòng khám Đa khoa Saigon Healthcare","45 Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh","https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/101727-anh-sg-toan-dien-ben-ngoai_ghclzw.jpg","https://bookingcare.vn/phong-kham-da-khoa-saigon-healthcare-p252.html"]
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -59,27 +74,27 @@ let callSendAPI = (sender_psid, response) => {
 let handleGetStarted = (sender_psid) => {
   return new Promise(async (resole, reject) => {
     try {
-      let userName = await getUserName(sender_psid);
-      let response;
+      // let userName = await getUserName(sender_psid);
+      // let response;
       // response={
       //   text: "Hello ",userName=="undefined undefined"?`${userName}`:"bạn", ":), started rồi đó. Gửi mình cái ảnh hay text thử đi",
       // }
 
-      if (userName != "undefined undefined")
-        response = {
-          text: `Hello ${userName} :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
-        };
-      else
-        response = {
-          text: `Hello bạn :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
-        };
+      // if (userName != "undefined undefined")
+      //   response = {
+      //     text: `Hello ${userName} :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
+      //   };
+      // else
+      //   response = {
+      //     text: `Hello bạn :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
+      //   };
+      // callSendAPI(sender_psid, response);
 
-      callSendAPI(sender_psid, response);
 
       // let response1 = sendImage(sender_psid);
       sendButtonTemplateHello(sender_psid);
-      // let response2 = sendGIF();
-      // await callSendAPI(sender_psid, response2);
+      let response2 = sendGIF();
+      await callSendAPI(sender_psid, response2);
 
       resole("done");
     } catch (error) {
@@ -104,7 +119,7 @@ let sendButtonTemplateHello = (sender_psid) => {
           },
           {
             type: "postback", //chạy vo ham handlePostBack
-            title: "Cho tôi xem MAIN_MENU",
+            title: "Xem MAIN_MENU",
             payload: "MAIN_MENU",
           },
           {
@@ -204,6 +219,11 @@ let getMainMenuTemplate = () => {
                 title: "Xem Bác Sĩ",
                 payload: "BacSi",
               },
+              {
+                type: "postback",
+                title: "Xem Bệnh Viện",
+                payload: "BenhVien",
+              },
             ],
           },
           {
@@ -283,6 +303,49 @@ let SendButton_Template = () => {
 //   return response;
 // };
 
+let handleBenhVien= (sender_psid) => {
+  let response = {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "generic",
+        elements: [
+          {
+            title: BvDHYDuoc[0],
+            subtitle: BvDHYDuoc[1],
+            image_url: BvDHYDuoc[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: BvDHYDuoc[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+          {
+            title: BVPKhamDaKSaiGon[0],
+            subtitle: BVPKhamDaKSaiGon[1],
+            image_url: BVPKhamDaKSaiGon[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: BVPKhamDaKSaiGon[3],
+                webview_height_ratio: "full",
+                // type: "postback",
+                //   title: "Ukm ;)",
+                //   payload: "yes",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+  callSendAPI(sender_psid, response);
+}
+
 let handleBacSi = (sender_psid) => {
   let response = {
     attachment: {
@@ -345,7 +408,6 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-         
         ],
       },
     },
@@ -358,5 +420,5 @@ module.exports = {
   callSendAPI,
   handleSendMenu,
   sendImage,
-  handleBacSi,
+  handleBacSi,handleBenhVien
 };
