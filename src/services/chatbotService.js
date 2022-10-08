@@ -45,6 +45,11 @@ let handleGetStarted = (sender_psid) => {
     try {
       let userName = await getUserName(sender_psid);
       let response;
+      // response={
+      //   text: "Hello ",userName=="undefined undefined"?`${userName}`:"bạn", ":), started rồi đó. Gửi mình cái ảnh hay text thử đi",
+      // }
+
+
       if (userName != "undefined undefined")
         response = {
           text: `Hello ${userName} :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
@@ -56,11 +61,11 @@ let handleGetStarted = (sender_psid) => {
 
 
       // let response1 = sendImage(sender_psid);
-      let response2 = sendGIF();
       sendButtonTemplateHello(sender_psid)
-      await callSendAPI(sender_psid, response);
-      // await callSendAPI(sender_psid, response1);
-      await callSendAPI(sender_psid, response2);
+       callSendAPI(sender_psid, response);
+      // let response2 = sendGIF();
+
+      // await callSendAPI(sender_psid, response2);
 
       resole("done");
     } catch (error) {
@@ -75,12 +80,17 @@ let sendButtonTemplateHello= (sender_psid)=>{
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"What do you want to do next?",
+        "text":"Xin chào tôi có thể giúp gì bạn?",
         "buttons":[
           {
             "type":"web_url",
             "url":"https://www.messenger.com",
             "title":"Visit Messenger"
+          },
+          {
+            type: "postback", //chạy vo ham handlePostBack
+            title: "Cho tôi xem MAIN_MENU",
+            payload: "MAIN_MENU",
           },
          
         ]
