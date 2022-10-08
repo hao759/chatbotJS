@@ -70,7 +70,7 @@ let handleGetStarted = (sender_psid) => {
 };
 
 let sendButtonTemplateHello= (sender_psid)=>{
-  message={//dau : sai
+  let message={//dau : sai
     "attachment":{
       "type":"template",
       "payload":{
