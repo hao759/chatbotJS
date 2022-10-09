@@ -53,6 +53,24 @@ const BVPKhamDaKSaiGon = [
   "https://bookingcare.vn/phong-kham-da-khoa-saigon-healthcare-p252.html",
 ];
 
+const CkCoXuongKhop = [
+  "Cơ Xương Khớp",
+  "Viêm cơ, Teo cơ, chứng đau mỏi cơ\nViêm xương, gai xương...",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281606/Booking/CoXuongKhop_xjonai.jpg",
+  "https://bookingcare.vn/co-xuong-khop-s1",
+];
+const CkThanKinh = [
+  "Thần kinh",
+  "Đau đầu, chóng mặt, buồn nôn\nBệnh Pakison, bệnh tiền đình...",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/CoThanKhinh_dir1ez.jpg",
+  "https://bookingcare.vn/than-kinh-s18",
+];
+const CkTieuHoa = [
+  "Ăn uống kém, không ngon\nRối loạn tiêu hóa, táo bón, trĩ...",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/TieuHoa_tgzhnz.jpg",
+  "https://bookingcare.vn/tieu-hoa-s22",
+];
+
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
     recipient: {
@@ -228,6 +246,11 @@ let getMainMenuTemplate = () => {
                 title: "Xem Bệnh Viện",
                 payload: "BenhVien",
               },
+              {
+                type: "postback",
+                title: "Chuyên khoa nổi bật",
+                payload: "ChuyenKhoa",
+              },
             ],
           },
           {
@@ -369,6 +392,59 @@ let handleBenhVien = (sender_psid) => {
   callSendAPI(sender_psid, response);
 };
 
+let handleChuyenKhoa = (sender_psid) => {
+  let response = {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "generic",
+        elements: [
+          {
+            title: CkCoXuongKhop[0],
+            subtitle: CkCoXuongKhop[1],
+            image_url: CkCoXuongKhop[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: CkCoXuongKhop[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+          {
+            title: CkThanKinh[0],
+            subtitle: CkThanKinh[1],
+            image_url: CkThanKinh[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: CkThanKinh[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+          {
+            title: CkTieuHoa[0],
+            subtitle: CkTieuHoa[1],
+            image_url: CkTieuHoa[2],
+            buttons: [
+              {
+                type: "web_url",
+                title: "Xem chi tiết",
+                url: CkTieuHoa[3],
+                webview_height_ratio: "full",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+  callSendAPI(sender_psid, response);
+};
+
 let handleBacSi = (sender_psid) => {
   let response = {
     attachment: {
@@ -446,4 +522,5 @@ module.exports = {
   handleBacSi,
   handleBenhVien,
   sendVideo,
+  handleChuyenKhoa,
 };
