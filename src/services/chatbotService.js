@@ -142,7 +142,7 @@ let sendButtonTemplateHello = (sender_psid) => {
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
-            title: "Tìm hiểu thêm về App",
+            title: "O:-) Tìm hiểu thêm về App 3:-)",
             payload: "MAIN_MENU",
           },
           {
@@ -233,8 +233,8 @@ let getMainMenuTemplate = () => {
         template_type: "generic",
         elements: [
           {
-            title: "Các chức năng chính ",
-            subtitle: "Chọn để tìm hiểu thêm về app",
+            title: "Các chức năng chính B-)",
+            subtitle: " Chọn để tìm hiểu thêm về app <3",
             image_url: imgKatarina,
             buttons: [
               {
@@ -244,7 +244,7 @@ let getMainMenuTemplate = () => {
               },
               {
                 type: "postback",
-                title: "Xem Bệnh Viện",
+                title: "Bệnh Viện nổi bật",
                 payload: "BenhVien",
               },
               {
