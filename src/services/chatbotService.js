@@ -307,21 +307,22 @@ let sendGIF = () => {
   return response;
 };
 
-let sendVideo = (sender_psid) => {//day du """"
+let sendVideo = (sender_psid) => {
+  //day du """"
   let message = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-         "template_type": "media",
-         "elements": [
-            {
-               "media_type": "video",
-               "url": "https://www.facebook.com/100086439574330/videos/548287560390373"
-            }
-         ]
-      }
-    }    
-  }
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "video",
+            url: "https://www.facebook.com/100086439574330/videos/548287560390373",
+          },
+        ],
+      },
+    },
+  };
   callSendAPI(sender_psid, message);
 };
 
@@ -445,5 +446,4 @@ module.exports = {
   handleBacSi,
   handleBenhVien,
   sendVideo,
-  
 };
