@@ -138,11 +138,11 @@ let sendButtonTemplateHello = (sender_psid) => {
       type: "template",
       payload: {
         template_type: "button",
-        text: "Xin chào tôi có thể giúp gì bạn? Bạn có thể chọn nút góc phải dưới để reset lại bot",
+        text: "Xin chào tôi có thể giúp gì bạn? Bạn có thể chọn nút góc phải dưới để reset lại bot 🚨",
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
-            title: "Tìm hiểu thêm về App 3:-)",
+            title: "💥Tìm hiểu thêm về App 3:-)",
             payload: "MAIN_MENU",
           },
           {
