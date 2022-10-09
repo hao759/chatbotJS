@@ -66,6 +66,7 @@ const CkThanKinh = [
   "https://bookingcare.vn/than-kinh-s18",
 ];
 const CkTieuHoa = [
+  "Tiêu hóa",
   "Ăn uống kém, không ngon\nRối loạn tiêu hóa, táo bón, trĩ...",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/TieuHoa_tgzhnz.jpg",
   "https://bookingcare.vn/tieu-hoa-s22",

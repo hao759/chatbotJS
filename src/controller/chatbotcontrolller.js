@@ -181,7 +181,6 @@ async function handlePostback(sender_psid, received_postback) {
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
 
-     
       break;
 
     case "MAIN_MENU":
@@ -193,9 +192,9 @@ async function handlePostback(sender_psid, received_postback) {
     case "BenhVien":
       await chatbotService.handleBenhVien(sender_psid);
       break;
-      case "ChuyenKhoa":
-        await chatbotService.handleChuyenKhoa(sender_psid);
-        break;
+    case "ChuyenKhoa":
+      await chatbotService.handleChuyenKhoa(sender_psid);
+      break;
 
     default:
       response = { text: "Oop :), default " };
