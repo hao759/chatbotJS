@@ -6,7 +6,7 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const url_img2 = "https://bit.ly/chibisutu";
 const imgKatarina =
-  "https://ecdn.game4v.com/g4v-content/uploads/2021/03/LMHT-Toc-Chien-ra-mat-Katarina-GAME4V.jpg";
+  "https://i.ytimg.com/vi/X7d78_vQZBQ/maxresdefault.jpg";
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 const Gif1 =
@@ -138,11 +138,11 @@ let sendButtonTemplateHello = (sender_psid) => {
       type: "template",
       payload: {
         template_type: "button",
-        text: "Xin chào tôi có thể giúp gì bạn?",
+        text: "Xin chào tôi có thể giúp gì bạn? Bạn có thể chọn nút góc phải dưới để reset lại bot",
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
-            title: "Xem MAIN_MENU",
+            title: "Tìm hiểu thêm về App",
             payload: "MAIN_MENU",
           },
           {
@@ -233,8 +233,8 @@ let getMainMenuTemplate = () => {
         template_type: "generic",
         elements: [
           {
-            title: "Bác sĩ ",
-            subtitle: "Bông sen tử thần",
+            title: "Các chức năng chính ",
+            subtitle: "Chọn để tìm hiểu thêm về app",
             image_url: imgKatarina,
             buttons: [
               {

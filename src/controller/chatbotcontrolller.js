@@ -177,21 +177,24 @@ async function handlePostback(sender_psid, received_postback) {
     case "no":
       response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
       break;
+
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-
       break;
 
     case "MAIN_MENU":
       await chatbotService.handleSendMenu(sender_psid);
       break;
+
     case "BacSi":
       await chatbotService.handleBacSi(sender_psid);
       break;
+
     case "BenhVien":
       await chatbotService.handleBenhVien(sender_psid);
       break;
+
     case "ChuyenKhoa":
       await chatbotService.handleChuyenKhoa(sender_psid);
       break;
