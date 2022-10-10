@@ -80,6 +80,10 @@ function handleMessage(sender_psid, received_message) {
         response = {
           text: `Cút  :* `,
         };
+        case "cdm":case "cdmm":
+        response = {
+          text: `Mẹ dặn không được chửi tục `,
+        };
         break;
       case "alo":
         response = {
