@@ -75,7 +75,7 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
-    switch (received_message.text) {
+    switch (received_message.text.toLowerCase()) {
       case "cc":
         response = {
           text: `Cút  :* `,
@@ -87,7 +87,7 @@ function handleMessage(sender_psid, received_message) {
         };
         break;
       case "e":
-      case ".":
+      case ".": 
         response = {
           text: `${received_message.text} qq  :* `,
         };
