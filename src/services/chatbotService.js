@@ -142,13 +142,13 @@ let sendButtonTemplateHello = (sender_psid) => {
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
-            title: "💥Tìm hiểu thêm về App 3:-)",
+            title: "💥Tìm hiểu thêm 3:-)",
             payload: "MAIN_MENU",
           },
           {
             type: "web_url",
             url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
-            title: "Để lại thông tin để tư vấn ;)",
+            title: "Cần tư vấn ;)",
             webview_height_ratio: "tall",
             messenger_extensions: true, //mo tren tag do
           },
