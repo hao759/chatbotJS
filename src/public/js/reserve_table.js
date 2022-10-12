@@ -76,7 +76,6 @@ function handleClickButtonReserveTable(senderId) {
           // webview closed
         },
         function error(err) {
-          // an error occurred
           console.log(err);
         }
       );
@@ -87,8 +86,8 @@ function handleClickButtonReserveTable(senderId) {
         data: data,
         success: function (data) {
           console.log("fgf", data, "haha");
-          // document.querySelector("#btnFindOrder").style.opacity = "0.1";
-          document.getElementById("form").style.opacity = "0.1";
+          document.getElementById("form").style.opacity = "0.5";
+          document.getElementById("btnFindOrder").style.opacity = "0.1";
         },
         error: function (error) {
           console.log("err", error);
