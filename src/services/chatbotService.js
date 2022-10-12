@@ -150,7 +150,7 @@ let sendButtonTemplateHello = (sender_psid) => {
             url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
             title: "Cần tư vấn ;)",
             webview_height_ratio: "tall",
-            messenger_extensions: true, //mo tren tag do
+            // messenger_extensions: true, //mo tren tag do
           },
         ],
       },
