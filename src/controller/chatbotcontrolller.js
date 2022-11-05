@@ -99,7 +99,8 @@ function handleMessage(sender_psid, received_message) {
 
       default:
         response = {
-          text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
+          // text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
+          text: "Chúng tôi đã nhận được tin nhắn của bạn và sẽ sớm trả lời. ",
         };
         break;
     }
@@ -137,7 +138,7 @@ function handleMessage(sender_psid, received_message) {
             //   ],
             // },
             {
-              title: "Hay này hả? >.<",
+              title: "Cảm ơn đã cung cấp thêm thông tin",
               subtitle: "Chắc là vậy T_T",
               image_url: attachment_url,
               buttons: [

@@ -5,7 +5,7 @@ import request from "request";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const url_img2 = "https://bit.ly/chibisutu";
-const imgKatarina = "https://i.ytimg.com/vi/X7d78_vQZBQ/maxresdefault.jpg";
+const imgXemthem = "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667626713/13-cach-chao-mung-trong-tieng-anh-3_mbsfqo.jpg";
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 const Gif1 =
@@ -143,13 +143,13 @@ let sendButtonTemplateHello = (sender_psid) => {
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
-            title: "💥Tìm hiểu thêm 3:-)",
+            title: "💥Tìm hiểu thêm ",
             payload: "MAIN_MENU",
           },
           {
             type: "web_url",
             url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
-            title: "Cần tư vấn ;)",
+            title: "Cần tư vấn ?",
             webview_height_ratio: "tall",
             messenger_extensions: true, //mo tren tag do
           },
@@ -236,7 +236,7 @@ let getMainMenuTemplate = () => {
           {
             title: "Các chức năng chính",
             subtitle: " Chọn để tìm hiểu thêm về app ",
-            image_url: imgKatarina,
+            image_url: imgXemthem,
             buttons: [
               {
                 type: "postback",
