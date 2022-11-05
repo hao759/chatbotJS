@@ -89,6 +89,8 @@ function handleClickButtonReserveTable(senderId) {
           document.getElementById("form").style.opacity = "0.5";
           document.getElementById("btnFindOrder").style.opacity = "0.1";
           document.getElementById('Button').attr('disabled','disabled');
+          document.getElementById('Button').attr('cursor','default');
+          
         },
         error: function (error) {
           console.log("err", error);
