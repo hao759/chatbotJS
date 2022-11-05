@@ -235,12 +235,12 @@ let getMainMenuTemplate = () => {
         elements: [
           {
             title: "Các chức năng chính",
-            subtitle: " Chọn để tìm hiểu thêm về app <3",
+            subtitle: " Chọn để tìm hiểu thêm về app ",
             image_url: imgKatarina,
             buttons: [
               {
                 type: "postback",
-                title: "Xem Bác Sĩ",
+                title: "Gợi ý Bác Sĩ",
                 payload: "BacSi",
               },
               {
@@ -255,29 +255,29 @@ let getMainMenuTemplate = () => {
               },
             ],
           },
-          {
-            title: "Chao ban. Day la getMainMenuTemplate2",
-            subtitle: "getMainMenuTemplate",
-            image_url: imgZed,
-            buttons: [
-              {
-                type: "postback",
-                title: "Ukm ;)",
-                payload: "yes",
-              },
-              {
-                type: "postback", //chạy vo ham handlePostBack
-                title: "Éo :v",
-                payload: "no",
-              },
-            ],
-          },
-          {
-            title: "Lucario ",
-            subtitle: "Mega Lucario",
-            image_url:
-              "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
-          },
+          // {
+          //   title: "Chao ban. Day la getMainMenuTemplate2",
+          //   subtitle: "getMainMenuTemplate",
+          //   image_url: imgZed,
+          //   buttons: [
+          //     {
+          //       type: "postback",
+          //       title: "Ukm ;)",
+          //       payload: "yes",
+          //     },
+          //     {
+          //       type: "postback", //chạy vo ham handlePostBack
+          //       title: "Éo :v",
+          //       payload: "no",
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: "Lucario ",
+          //   subtitle: "Mega Lucario",
+          //   image_url:
+          //     "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
+          // },
         ],
       },
     },

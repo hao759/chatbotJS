@@ -112,30 +112,30 @@ function handleMessage(sender_psid, received_message) {
         payload: {
           template_type: "generic",
           elements: [
-            {
-              title: "Mày mới gửi cái hình này á hả? >.<",
-              subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
-              image_url: url_img1,
-              buttons: [
-                {
-                  type: "postback",
-                  title: "Ukm ;)",
-                  payload: "yes",
-                },
-                {
-                  type: "postback", //chạy vo ham handlePostBack
-                  title: "Éo :v",
-                  payload: "no",
-                },
-                {
-                  type: "web_url",
-                  url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
-                  title: "Để lại danh tính ;)",
-                  webview_height_ratio: "tall",
-                  messenger_extensions: true, //mo tren tag do
-                },
-              ],
-            },
+            // {
+            //   title: "Mày mới gửi cái hình này á hả? >.<",
+            //   subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
+            //   image_url: url_img1,
+            //   buttons: [
+            //     {
+            //       type: "postback",
+            //       title: "Ukm ;)",
+            //       payload: "yes",
+            //     },
+            //     {
+            //       type: "postback", //chạy vo ham handlePostBack
+            //       title: "Éo :v",
+            //       payload: "no",
+            //     },
+            //     {
+            //       type: "web_url",
+            //       url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
+            //       title: "Để lại danh tính ;)",
+            //       webview_height_ratio: "tall",
+            //       messenger_extensions: true, //mo tren tag do
+            //     },
+            //   ],
+            // },
             {
               title: "Hay này hả? >.<",
               subtitle: "Chắc là vậy T_T",
@@ -172,15 +172,15 @@ async function handlePostback(sender_psid, received_postback) {
   // Set the response based on the postback payload
 
   switch (payload) {
-    case "yes":
-      response = { text: "OK <3" };
-      let response1 = chatbotService.sendImage(sender_psid);
-      await callSendAPI(sender_psid, response1);
-      break;
+    // case "yes":
+    //   response = { text: "OK <3" };
+    //   let response1 = chatbotService.sendImage(sender_psid);
+    //   await callSendAPI(sender_psid, response1);
+    //   break;
 
-    case "no":
-      response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
-      break;
+    // case "no":
+    //   response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
+    //   break;
 
     case "Restart":
     case "GET_STARTED":
