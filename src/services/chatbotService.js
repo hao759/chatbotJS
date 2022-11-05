@@ -5,7 +5,8 @@ import request from "request";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const url_img2 = "https://bit.ly/chibisutu";
-const imgXemthem = "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667626713/13-cach-chao-mung-trong-tieng-anh-3_mbsfqo.jpg";
+const imgXemthem =
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667626713/13-cach-chao-mung-trong-tieng-anh-3_mbsfqo.jpg";
 const imgZed =
   "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
 const Gif1 =
@@ -14,7 +15,7 @@ const Gif1 =
 const BsDaoHung = [
   "Bác sĩ Chuyên khoa II Đào Hùng",
   "Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh ",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/d3f913b8dd27fac04b26c2c9a903610d_huoz0t.png",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/867-8678512_doctor-icon-physician_plpp7o.jpg",
   "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
 ];
 
@@ -39,9 +40,6 @@ const BsDaoThiHuong = [
   "https://bookingcare.vn/bac-si-chuyen-khoa-ii-ha-quoc-hung-d595.html",
 ];
 
-
-
-
 const BvDHYDuoc = [
   "Phòng khám Bệnh viện Đại học Y Dược 1",
   "20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM",
@@ -58,7 +56,7 @@ const BVPKhamDaKSaiGon = [
 const CkCoXuongKhop = [
   "Cơ Xương Khớp",
   "Viêm cơ, Teo cơ, chứng đau mỏi cơ\nViêm xương, gai xương...",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281606/Booking/CoXuongKhop_xjonai.jpg",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667625003/Booking/co-xuong-khop_g59juy.jpg",
   "https://bookingcare.vn/co-xuong-khop-s1",
 ];
 const CkThanKinh = [
