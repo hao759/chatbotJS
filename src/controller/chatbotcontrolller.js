@@ -33,7 +33,7 @@ let postWebhook = (req, res) => {
       if (webhook_event.message) {
         handleMessage(sender_psid, webhook_event.message);
       } else if (webhook_event.postback) {
-        handlePostback(sender_psid, webhook_event.postback);
+       handlePostback(sender_psid, webhook_event.postback);
       }
     });
 
@@ -208,7 +208,7 @@ async function handlePostback(sender_psid, received_postback) {
       break;
   }
   // Send the message to acknowledge the postback
-  callSendAPI(sender_psid, response);
+   callSendAPI(sender_psid, response);
 }
 
 // Sends response messages via the Send API

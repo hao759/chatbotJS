@@ -122,7 +122,6 @@ let handleGetStarted = (sender_psid) => {
       await callSendAPI(sender_psid, response2);
 
       sendVideo(sender_psid);
-
       resole("done");
     } catch (error) {
       reject(error);
