@@ -11,33 +11,36 @@ const imgZed =
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
-const BsHung = [
-  "Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng",
-  "Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương ",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/114430-bshung_kuy3g5.jpg",
+const BsDaoHung = [
+  "Bác sĩ Chuyên khoa II Đào Hùng",
+  "Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh ",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/d3f913b8dd27fac04b26c2c9a903610d_huoz0t.png",
   "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-cao-cap-nguyen-duy-hung-d168.html",
 ];
 
-const BsNTHAn = [
-  "Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An",
+const BsBuiNgocAnh = [
+  "Phó Giáo sư, Tiến sĩ, Bác sĩ Bùi Ngọc Anh",
   "Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/090559-pgs-nguyen-thi-hoai-an_yh0mzj.jpg",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/d3f913b8dd27fac04b26c2c9a903610d_huoz0t.png",
   "https://bookingcare.vn/pho-giao-su-tien-si-bac-si-nguyen-thi-hoai-an-d100.html",
 ];
 
-const BsTMKhuyen = [
-  "Bác sĩ Chuyên khoa II Trần Minh Khuyên",
-  "Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/105401-bsckii-tran-minh-khuyen_ukkwzs.jpg",
+const BsNgocVy = [
+  "Bác sĩ chuyên khoa II Hoàng Ngọc Vy",
+  "Trưởng Khoa Dinh Dưỡng bệnh viện Da Liễu TP.HCM",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/206875_vbkyaa.png",
   "https://bookingcare.vn/bac-si-chuyen-khoa-ii-tran-minh-khuyen-d1466.html",
 ];
 
-const BsHQHung = [
-  "Bác sĩ Chuyên khoa II Hà Quốc Hùng",
-  "Gần 30 năm kinh nghiệm khám và điều trị chuyên sâu về các bệnh lý Nội khoa - Cơ xương khớp",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665227871/Booking/172821thac-si-bac-si-ha-quoc-hung_ehbmcu.jpg",
+const BsDaoThiHuong = [
+  "Bác sĩ Chuyên khoa I Đào Thị Hương",
+  "Hơn 30 năm kinh nghiệm trong khám và điều trị bệnh lý Sản phụ khoa",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/cdn.dsad_tan13z.png",
   "https://bookingcare.vn/bac-si-chuyen-khoa-ii-ha-quoc-hung-d595.html",
 ];
+
+
+
 
 const BvDHYDuoc = [
   "Phòng khám Bệnh viện Đại học Y Dược 1",
@@ -452,27 +455,27 @@ let handleBacSi = (sender_psid) => {
         template_type: "generic",
         elements: [
           {
-            title: BsTMKhuyen[0],
-            subtitle: BsTMKhuyen[1],
-            image_url: BsTMKhuyen[2],
+            title: BsNgocVy[0],
+            subtitle: BsNgocVy[1],
+            image_url: BsNgocVy[2],
             buttons: [
               {
                 type: "web_url",
                 title: "Xem chi tiết",
-                url: BsTMKhuyen[3],
+                url: BsNgocVy[3],
                 webview_height_ratio: "full",
               },
             ],
           },
           {
-            title: BsHung[0],
-            subtitle: BsHung[1],
-            image_url: BsHung[2],
+            title: BsDaoHung[0],
+            subtitle: BsDaoHung[1],
+            image_url: BsDaoHung[2],
             buttons: [
               {
                 type: "web_url",
                 title: "Xem chi tiết",
-                url: BsHung[3],
+                url: BsDaoHung[3],
                 webview_height_ratio: "full",
                 // type: "postback",
                 //   title: "Ukm ;)",
@@ -481,27 +484,27 @@ let handleBacSi = (sender_psid) => {
             ],
           },
           {
-            title: BsNTHAn[0],
-            subtitle: BsNTHAn[1],
-            image_url: BsNTHAn[2],
+            title: BsBuiNgocAnh[0],
+            subtitle: BsBuiNgocAnh[1],
+            image_url: BsBuiNgocAnh[2],
             buttons: [
               {
                 type: "web_url",
                 title: "Xem chi tiết",
-                url: BsNTHAn[3],
+                url: BsBuiNgocAnh[3],
                 webview_height_ratio: "full",
               },
             ],
           },
           {
-            title: BsHQHung[0],
-            subtitle: BsHQHung[1],
-            image_url: BsHQHung[2],
+            title: BsDaoThiHuong[0],
+            subtitle: BsDaoThiHuong[1],
+            image_url: BsDaoThiHuong[2],
             buttons: [
               {
                 type: "web_url",
                 title: "Xem chi tiết",
-                url: BsHQHung[3],
+                url: BsDaoThiHuong[3],
                 webview_height_ratio: "full",
               },
             ],

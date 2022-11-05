@@ -89,7 +89,8 @@ function handleClickButtonReserveTable(senderId) {
           document.getElementById("form").style.opacity = "0.5";
           document.getElementById("btnFindOrder").style.opacity = "0.1";
           document.getElementById("btnFindOrder").style.cursor = "default";
-          document.getElementById("btnFindOrder").style.disabled = "disabled";
+          // document.getElementById("btnFindOrder").style.disabled = "disabled";
+          document.querySelector('#btnFindOrder').disabled = true;
         },
         error: function (error) {
           console.log("err", error);
