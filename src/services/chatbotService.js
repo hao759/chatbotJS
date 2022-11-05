@@ -51,7 +51,7 @@ const BvDHYDuoc = [
 const BVPKhamDaKSaiGon = [
   "Phòng khám Đa khoa Saigon Healthcare",
   "45 Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/101727-anh-sg-toan-dien-ben-ngoai_ghclzw.jpg",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667625003/Booking/co-xuong-khop_g59juy.jpg",
   "https://bookingcare.vn/phong-kham-da-khoa-saigon-healthcare-p252.html",
 ];
 
@@ -121,8 +121,8 @@ let handleGetStarted = (sender_psid) => {
 
       // let response1 = sendImage(sender_psid);
       sendButtonTemplateHello(sender_psid);
-      let response2 = sendGIF();
-      await callSendAPI(sender_psid, response2);
+      // let response2 = sendGIF();
+      // await callSendAPI(sender_psid, response2);
 
       sendVideo(sender_psid);
       resole("done");
@@ -342,7 +342,7 @@ let sendVideo = (sender_psid) => {
         elements: [
           {
             media_type: "video",
-            url: "https://www.facebook.com/100086439574330/videos/548287560390373",
+            url: "https://www.facebook.com/100086439574330/videos/1460481531129941",
           },
         ],
       },
