@@ -5,9 +5,7 @@ import chatbotController from "../controller/chatbotcontrolller";
 let router = express.Router();
 
 let initWebRoute = (app) => {
-  router.get("/", (req, res) => {
-    res.render("test.ejs");
-  });
+ 
   router.post("/setup_profile", chatbotController.setupProfile);
   router.post("/setup_persistent_menu", chatbotController.setupPersistent);
   router.get("/webhook", chatbotController.getWebHook);
@@ -16,7 +14,9 @@ let initWebRoute = (app) => {
 
   router.post("/reserve-table-ajax", chatbotController.handlePostReserve);
   // /
-
+  router.get("/", (req, res) => {
+    res.render("test.ejs");
+  });
   return app.use("/", router);
 };
 
