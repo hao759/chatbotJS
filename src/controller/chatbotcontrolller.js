@@ -15,6 +15,7 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 // let postWebHook = (req, res) => {
 let postWebhook = (req, res) => {
   // Parse the request body from the POST
+  console.log("=========Run postWebhook=======");
   let body = req.body;
   // Check the webhook event is from a Page subscription
   if (body.object === "page") {
@@ -53,8 +54,8 @@ let getWebHook = (req, res) => {
   let mode = req.query["hub.mode"];
   let token = req.query["hub.verify_token"];
   let challenge = req.query["hub.challenge"];
-  console.log("VERIFY_TOKEN");
-
+  console.log("=========VERIFY_TOKEN=======");
+  console.log("=========Run getWebHook=======");
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
     // Check the mode and token sent is correct
