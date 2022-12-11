@@ -251,7 +251,7 @@ let setupProfile = async (req, res) => {
     get_started: { payload: "GET_STARTED" },
     whitelisted_domains: [
       "https://chatbotjs.onrender.com/",
-      "https://deploy-frontend-3krryll7m-hao759.vercel.app/",
+      "https://deploy-frontend-3krryll7m-hao759.vercel.app/home",
     ],
   };
   // Send the HTTP request to the Messenger Platform
