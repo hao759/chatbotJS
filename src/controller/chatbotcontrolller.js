@@ -34,7 +34,7 @@ let postWebhook = (req, res) => {
       if (webhook_event.message) {
         handleMessage(sender_psid, webhook_event.message);
       } else if (webhook_event.postback) {
-       handlePostback(sender_psid, webhook_event.postback);
+        handlePostback(sender_psid, webhook_event.postback);
       }
     });
 
@@ -80,7 +80,8 @@ function handleMessage(sender_psid, received_message) {
         response = {
           text: `Cút  :* `,
         };
-        case "cdm":case "cdmm":
+      case "cdm":
+      case "cdmm":
         response = {
           text: `Mẹ dặn không được chửi tục `,
         };
@@ -91,7 +92,7 @@ function handleMessage(sender_psid, received_message) {
         };
         break;
       case "e":
-      case ".": 
+      case ".":
         response = {
           text: `${received_message.text} qq  :* `,
         };
@@ -209,7 +210,7 @@ async function handlePostback(sender_psid, received_postback) {
       break;
   }
   // Send the message to acknowledge the postback
-   callSendAPI(sender_psid, response);
+  callSendAPI(sender_psid, response);
 }
 
 // Sends response messages via the Send API
@@ -241,12 +242,17 @@ async function callSendAPI(sender_psid, response) {
   );
 }
 
+
 let setupProfile = async (req, res) => {
   //????????????????
   //call profile api facebook
+
   let request_body = {
     get_started: { payload: "GET_STARTED" },
-    whitelisted_domains: ["https://chatbotjs.onrender.com/"],
+    whitelisted_domains: [
+      "https://chatbotjs.onrender.com/",
+      "https://deploy-frontend-3krryll7m-hao759.vercel.app/",
+    ],
   };
   // Send the HTTP request to the Messenger Platform
   await request(
@@ -257,7 +263,7 @@ let setupProfile = async (req, res) => {
       json: request_body,
     },
     (err, res, body) => {
-      console.log("body :",body);
+      console.log("body :", body);
       if (!err) {
         console.log("setup user profile succeed!");
       } else {
