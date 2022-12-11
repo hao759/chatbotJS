@@ -54,7 +54,6 @@ let getWebHook = (req, res) => {
   let mode = req.query["hub.mode"];
   let token = req.query["hub.verify_token"];
   let challenge = req.query["hub.challenge"];
-  console.log("=========VERIFY_TOKEN=======");
   console.log("=========Run getWebHook=======");
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
@@ -258,7 +257,7 @@ let setupProfile = async (req, res) => {
       json: request_body,
     },
     (err, res, body) => {
-      console.log(body);
+      console.log("body :",body);
       if (!err) {
         console.log("setup user profile succeed!");
       } else {
@@ -361,7 +360,6 @@ let handlePostReserve = async (req, res) => {
     };
     await callSendAPI(req.body.senderId, response1);
     await writeGoogleSheet(data);
-    console.log(response1);
     return res.status(200).json({
       message: "ok1",
     });
