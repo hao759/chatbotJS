@@ -246,7 +246,7 @@ let setupProfile = async (req, res) => {
   //call profile api facebook
   let request_body = {
     get_started: { payload: "GET_STARTED" },
-    whitelisted_domains: ["https://chatbotlan2.herokuapp.com/"],
+    whitelisted_domains: ["https://chatbotjs.onrender.com/"],
   };
   // Send the HTTP request to the Messenger Platform
   await request(
@@ -282,7 +282,7 @@ let setupPersistent = async (req, res) => {
           {
             type: "web_url",
             title: "Heroku",
-            url: "https://chatbotlan2.herokuapp.com/",
+            url: "https://chatbotjs.onrender.com/",
             webview_height_ratio: "full",
           },
           {
