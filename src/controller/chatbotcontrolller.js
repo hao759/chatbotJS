@@ -286,12 +286,12 @@ let setupPersistent = async (req, res) => {
             title: "Mở Main_menu",
             payload: "MAIN_MENU",
           },
-          {
-            type: "web_url",
-            title: "Heroku",
-            url: "https://chatbotjs.onrender.com/",
-            webview_height_ratio: "full",
-          },
+          // {
+          //   type: "web_url",
+          //   title: "Heroku",
+          //   url: "https://chatbotjs.onrender.com/",
+          //   webview_height_ratio: "full",
+          // },
           {
             type: "postback",
             title: "Khởi động lại bot",

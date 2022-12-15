@@ -27,8 +27,8 @@ const BsBuiNgocAnh = [
 ];
 
 const BsNgocVy = [
-  "Bác sĩ chuyên khoa II Hoàng Ngọc Vy",
-  "Trưởng Khoa Dinh Dưỡng bệnh viện Da Liễu TP.HCM",
+  "Katarina - Bông sen tử thần",
+  "Kata siêu phẩm",
   "https://lol-skin.weblog.vc/img/wallpaper/splash/Katarina_9.jpg?1668538666",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
@@ -41,7 +41,7 @@ const BsDaoThiHuong = [
 ];
 
 const BvDHYDuoc = [
-  "Phòng khám Bệnh viện Đại học Y Dược 1",
+  "CLASH OF ROYAL",
   "20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM",
   "https://cdn.royaleapi.com/static/img/blog/2022-06-season36/s36-promo-sm.jpg?t=a866b36bc",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
@@ -54,8 +54,8 @@ const BVPKhamDaKSaiGon = [
 ];
 
 const CkCoXuongKhop = [
-  "Cơ Xương Khớp",
-  "Viêm cơ, Teo cơ, chứng đau mỏi cơ\nViêm xương, gai xương...",
+  "SEASON 24",
+  "Game chiến thuật ? ...",
   "https://cdn.royaleapi.com/static/img/blog/2021-06-season24/s24-promo-sm.jpg?t=c6184d46c",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
