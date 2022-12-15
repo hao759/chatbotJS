@@ -16,60 +16,60 @@ const BsDaoHung = [
   "Bác sĩ Chuyên khoa II Đào Hùng",
   "Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh ",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/867-8678512_doctor-icon-physician_plpp7o.jpg",
-  "https://redeploy-frontend.vercel.app/",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 const BsBuiNgocAnh = [
   "Phó Giáo sư, Tiến sĩ, Bác sĩ Bùi Ngọc Anh",
   "Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/d3f913b8dd27fac04b26c2c9a903610d_huoz0t.png",
-  "https://redeploy-frontend.vercel.app/",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 const BsNgocVy = [
   "Bác sĩ chuyên khoa II Hoàng Ngọc Vy",
   "Trưởng Khoa Dinh Dưỡng bệnh viện Da Liễu TP.HCM",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/206875_vbkyaa.png",
-  "https://redeploy-frontend.vercel.app/",
+  "https://lol-skin.weblog.vc/img/wallpaper/splash/Katarina_9.jpg?1668538666",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 const BsDaoThiHuong = [
   "Bác sĩ Chuyên khoa I Đào Thị Hương",
   "Hơn 30 năm kinh nghiệm trong khám và điều trị bệnh lý Sản phụ khoa",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/cdn.dsad_tan13z.png",
-  "https://redeploy-frontend.vercel.app/",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 const BvDHYDuoc = [
   "Phòng khám Bệnh viện Đại học Y Dược 1",
   "20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665237454/Booking/112414-pk-dhyd1_qb52hf.jpg",
-  "https://redeploy-frontend.vercel.app/",
+  "https://cdn.royaleapi.com/static/img/blog/2022-06-season36/s36-promo-sm.jpg?t=a866b36bc",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 const BVPKhamDaKSaiGon = [
   "Phòng khám Đa khoa Saigon Healthcare",
   "45 Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667625003/Booking/co-xuong-khop_g59juy.jpg",
-  "https://redeploy-frontend.vercel.app/",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 const CkCoXuongKhop = [
   "Cơ Xương Khớp",
   "Viêm cơ, Teo cơ, chứng đau mỏi cơ\nViêm xương, gai xương...",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667625003/Booking/co-xuong-khop_g59juy.jpg",
-  "https://redeploy-frontend.vercel.app/",
+  "https://cdn.royaleapi.com/static/img/blog/2021-06-season24/s24-promo-sm.jpg?t=c6184d46c",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 const CkThanKinh = [
   "Thần kinh",
   "Đau đầu, chóng mặt, buồn nôn\nBệnh Pakison, bệnh tiền đình...",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/CoThanKhinh_dir1ez.jpg",
-  "https://redeploy-frontend.vercel.app/",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 const CkTieuHoa = [
   "Tiêu hóa",
   "Ăn uống kém, không ngon\nRối loạn tiêu hóa, táo bón, trĩ...",
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/TieuHoa_tgzhnz.jpg",
-  "https://redeploy-frontend.vercel.app/",
+  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 let callSendAPI = (sender_psid, response) => {
