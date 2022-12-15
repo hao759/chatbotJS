@@ -237,17 +237,17 @@ let getMainMenuTemplate = () => {
             buttons: [
               {
                 type: "postback",
-                title: "Gợi ý Bác Sĩ",
+                title: "Gợi ý 1",
                 payload: "BacSi",
               },
               {
                 type: "postback",
-                title: "Bệnh Viện nổi bật",
+                title: "Gợi ý 2",
                 payload: "BenhVien",
               },
               {
                 type: "postback",
-                title: "Chuyên khoa nổi bật",
+                title: "Gợi ý 3",
                 payload: "ChuyenKhoa",
               },
             ],
