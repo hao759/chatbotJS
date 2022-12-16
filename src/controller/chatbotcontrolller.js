@@ -187,6 +187,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
+      await sendQuickreplies(sender_psid);
       break;
 
     case "MAIN_MENU":
@@ -241,7 +242,6 @@ async function callSendAPI(sender_psid, response) {
     }
   );
 }
-
 
 let setupProfile = async (req, res) => {
   //????????????????
@@ -411,7 +411,51 @@ let writeGoogleSheet = async (data) => {
   });
 };
 
+let sendQuickreplies = async (sender_psid) => {
+  let messageSend = {
+    text: "Pick a color:",
+    quick_replies: [
+      {
+        content_type: "text",
+        title: "Red",
+        payload: "NULLL",
+        image_url: "http://example.com/img/red.png",
+      },
+      {
+        content_type: "user_phone_number",
+        payload: "NULLL",
+      },
+    ],
+  };
+  let request_body = {
+    recipient: {
+      id: sender_psid,
+    },
+    messaging_type: "RESPONSE",
+    message: messageSend,
+  };
+
+  await sendTypingOn(sender_psid);
+  // Send the HTTP request to the Messenger Platform
+  request(
+    {
+      uri: "https://graph.facebook.com/v15.0/me/messages",
+      qs: { access_token: PAGE_ACCESS_TOKEN },
+      method: "POST",
+      json: request_body,
+    },
+    (err, res, body) => {
+      if (!err) {
+        console.log("message sent!");
+      } else {
+        console.error("Unable to send message:" + err);
+      }
+    }
+  );
+};
+
 module.exports = {
+  sendQuickreplies,
   getHomePage,
   getWebHook,
   postWebhook,
