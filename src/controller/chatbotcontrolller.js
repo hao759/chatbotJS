@@ -422,10 +422,14 @@ let sendQuickreplies = async (sender_psid) => {
         content_type: "text",
         title: "Red",
         payload: "NULLL",
-        image_url: "http://example.com/img/red.png",
+        image_url: "https://printgo.vn/uploads/media/796109/xmau-xanh-duong_1631691234.jpg.pagespeed.ic.Z2axoP1qjY.jpg",
       },
       {
         content_type: "user_phone_number",
+        payload: "NULLL",
+      },
+      {
+        content_type: "user_email",
         payload: "NULLL",
       },
     ],
