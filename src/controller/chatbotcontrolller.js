@@ -97,7 +97,7 @@ let getWebHook = (req, res) => {
           text: `${received_message.text} qq  :* `,
         };
         break;
-        case ".":
+        case "q":
           await sendQuickreplies(sender_psid);
         break;
         
