@@ -71,7 +71,7 @@ let getWebHook = (req, res) => {
 };
 //
 
-function handleMessage(sender_psid, received_message) {
+ async function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
@@ -97,7 +97,10 @@ function handleMessage(sender_psid, received_message) {
           text: `${received_message.text} qq  :* `,
         };
         break;
-
+        case ".":
+          await sendQuickreplies(sender_psid);
+        break;
+        
       default:
         response = {
           // text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
@@ -187,7 +190,7 @@ async function handlePostback(sender_psid, received_postback) {
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-      await sendQuickreplies(sender_psid);
+     
       break;
 
     case "MAIN_MENU":
