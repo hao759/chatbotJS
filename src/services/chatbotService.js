@@ -11,7 +11,6 @@ const imgZed =
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
-
 const BsBuiNgocAnh = [
   "Phó ",
   "Nguyên Chúa Tể Hội đồng quản trị",
@@ -25,7 +24,6 @@ const BsNgocVy = [
   "https://lol-skin.weblog.vc/img/wallpaper/splash/Katarina_9.jpg?1668538666",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
-
 
 const BvDHYDuoc = [
   "CLASH OF ROYAL",
@@ -46,7 +44,6 @@ const CkCoXuongKhop = [
   "https://cdn.royaleapi.com/static/img/blog/2021-06-season24/s24-promo-sm.jpg?t=c6184d46c",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
-
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -162,7 +159,6 @@ let handleSendMenu = (sender_psid) => {
   });
 };
 
-
 let getMainMenuTemplate = () => {
   let response = {
     attachment: {
@@ -192,36 +188,12 @@ let getMainMenuTemplate = () => {
               },
             ],
           },
-          // {
-          //   title: "Chao ban. Day la getMainMenuTemplate2",
-          //   subtitle: "getMainMenuTemplate",
-          //   image_url: imgZed,
-          //   buttons: [
-          //     {
-          //       type: "postback",
-          //       title: "Ukm ;)",
-          //       payload: "yes",
-          //     },
-          //     {
-          //       type: "postback", //chạy vo ham handlePostBack
-          //       title: "Éo :v",
-          //       payload: "no",
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: "Lucario ",
-          //   subtitle: "Mega Lucario",
-          //   image_url:
-          //     "https://i.pinimg.com/originals/ab/a4/df/aba4df2e9acaa860cc268a240c2b5520.jpg",
-          // },
         ],
       },
     },
   };
   return response;
 };
-
 
 let sendGIFAndIMG = (data) => {
   let response = {
@@ -235,7 +207,6 @@ let sendGIFAndIMG = (data) => {
   };
   return response;
 };
-
 
 let sendVideo = (sender_psid) => {
   let message = {
@@ -358,7 +329,6 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-          
         ],
       },
     },

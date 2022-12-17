@@ -22,7 +22,7 @@ let postWebhook = (req, res) => {
     body.entry.forEach(function (entry) {
       // Gets the body of the webhook event
       let webhook_event = entry.messaging[0];
-      console.log("webhook_event==> " + webhook_event+ " <== ");
+      console.log("webhook_event==> " + webhook_event + " <== ");
       // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
       console.log("Sender PSID: " + sender_psid);
@@ -67,7 +67,7 @@ let getWebHook = (req, res) => {
   }
 };
 
- async function handleMessage(sender_psid, received_message) {
+async function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     // Create the payload for a basic text message, which will be added to the body of our request to the Send API
@@ -93,10 +93,10 @@ let getWebHook = (req, res) => {
           text: `${received_message.text} qq  :* `,
         };
         break;
-        case "q":
-          await sendQuickreplies(sender_psid);
+      case "q":
+        await sendQuickreplies(sender_psid);
         break;
-        
+
       default:
         response = {
           text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
@@ -144,11 +144,9 @@ async function handlePostback(sender_psid, received_postback) {
   let payload = received_postback.payload;
   // Set the response based on the postback payload
   switch (payload) {
-
     case "Restart":
     case "GET_STARTED":
       await chatbotService.handleGetStarted(sender_psid);
-     
       break;
 
     case "MAIN_MENU":
@@ -342,7 +340,8 @@ let sendQuickreplies = async (sender_psid) => {
         content_type: "text",
         title: "Red",
         payload: "NULLL",
-        image_url: "https://printgo.vn/uploads/media/796109/xmau-xanh-duong_1631691234.jpg.pagespeed.ic.Z2axoP1qjY.jpg",
+        image_url:
+          "https://printgo.vn/uploads/media/796109/xmau-xanh-duong_1631691234.jpg.pagespeed.ic.Z2axoP1qjY.jpg",
       },
       {
         content_type: "user_phone_number",
