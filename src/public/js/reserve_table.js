@@ -22,7 +22,7 @@ window.extAsyncInit = function () {
       handleClickButtonReserveTable();
     },
     function error(err) {
-      console.log("Lỗi đặt bàn Eric bot", err);
+      console.log("Lỗi đặt bàn  bot", err);
       //run fall back
 
       $("#psid").val(senderId);
@@ -61,7 +61,6 @@ function handleClickButtonReserveTable(senderId) {
     let check = true;
     // jQuery('#btnFindOrder').css('opacity', '0.1');
     // check=; //return true or false
-    console.log("-------------senderId-------------", senderId);
     var data = {
       // psid: $("#psid").val(),
       customerName: $("#customerName").val(),

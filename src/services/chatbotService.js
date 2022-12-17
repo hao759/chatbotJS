@@ -1,8 +1,7 @@
 require("dotenv").config();
-// import { response } from "express";
 import request from "request";
 
-const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+// const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const url_img2 = "https://bit.ly/chibisutu";
 const imgXemthem =
@@ -12,17 +11,12 @@ const imgZed =
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
-const BsDaoHung = [
-  "Bác sĩ Chuyên khoa II Đào Hùng",
-  "Nguyên Trưởng khoa lâm sàng, Bệnh tâm thần Thành phố Hồ Chí Minh ",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/867-8678512_doctor-icon-physician_plpp7o.jpg",
-  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
-];
+
 
 const BsBuiNgocAnh = [
-  "Phó Giáo sư, Tiến sĩ, Bác sĩ Bùi Ngọc Anh",
-  "Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/d3f913b8dd27fac04b26c2c9a903610d_huoz0t.png",
+  "Phó ",
+  "Nguyên Trưởng ",
+  imgZed,
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
@@ -33,12 +27,6 @@ const BsNgocVy = [
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
-const BsDaoThiHuong = [
-  "Bác sĩ Chuyên khoa I Đào Thị Hương",
-  "Hơn 30 năm kinh nghiệm trong khám và điều trị bệnh lý Sản phụ khoa",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667624988/Booking/cdn.dsad_tan13z.png",
-  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
-];
 
 const BvDHYDuoc = [
   "CLASH OF ROYAL",
@@ -59,18 +47,7 @@ const CkCoXuongKhop = [
   "https://cdn.royaleapi.com/static/img/blog/2021-06-season24/s24-promo-sm.jpg?t=c6184d46c",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
-const CkThanKinh = [
-  "Thần kinh",
-  "Đau đầu, chóng mặt, buồn nôn\nBệnh Pakison, bệnh tiền đình...",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/CoThanKhinh_dir1ez.jpg",
-  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
-];
-const CkTieuHoa = [
-  "Tiêu hóa",
-  "Ăn uống kém, không ngon\nRối loạn tiêu hóa, táo bón, trĩ...",
-  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1665281607/Booking/TieuHoa_tgzhnz.jpg",
-  "https://www.youtube.com/watch?v=5S01xsKjE0Y",
-];
+
 
 let callSendAPI = (sender_psid, response) => {
   let request_body = {
@@ -105,7 +82,6 @@ let handleGetStarted = (sender_psid) => {
       // response={
       //   text: "Hello ",userName=="undefined undefined"?`${userName}`:"bạn", ":), started rồi đó. Gửi mình cái ảnh hay text thử đi",
       // }
-
       // if (userName != "undefined undefined")
       //   response = {
       //     text: `Hello ${userName} :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
@@ -118,8 +94,9 @@ let handleGetStarted = (sender_psid) => {
 
       // let response1 = sendImage(sender_psid);
       sendButtonTemplateHello(sender_psid);
-      // let response2 = sendGIF();
-      // await callSendAPI(sender_psid, response2);
+
+      let response2 = sendGIF();
+      await callSendAPI(sender_psid, response2);
 
       sendVideo(sender_psid);
       resole("done");
@@ -136,7 +113,7 @@ let sendButtonTemplateHello = (sender_psid) => {
       type: "template",
       payload: {
         template_type: "button",
-        text: "Xin chào tôi có thể giúp gì bạn? Bạn có thể chọn nút góc phải dưới để reset lại bot 🚨",
+        text: "Xin chào tôi có thể giúp gì bạn? 💥❄️🚨⚡",
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
@@ -293,31 +270,29 @@ let sendImage = () => {
       },
     },
   };
-
   return response;
 };
 
-let SendButton_Template = () => {
-  let response = {
-    attachment: {
-      type: "template",
-      payload: {
-        template_type: "media",
-        elements: [
-          {
-            media_type: "<video>",
-            url: Gif1,
-          },
-        ],
-      },
-    },
-  };
-  return response;
-};
+// let SendButton_Template = () => {
+//   let response = {
+//     attachment: {
+//       type: "template",
+//       payload: {
+//         template_type: "media",
+//         elements: [
+//           {
+//             media_type: "<video>",
+//             url: Gif1,
+//           },
+//         ],
+//       },
+//     },
+//   };
+//   return response;
+// };
 
 let sendGIF = () => {
   let response = {
-    //  message: {
     attachment: {
       type: "image",
       payload: {
@@ -330,7 +305,6 @@ let sendGIF = () => {
 };
 
 let sendVideo = (sender_psid) => {
-  //day du """"
   let message = {
     attachment: {
       type: "template",
@@ -339,7 +313,7 @@ let sendVideo = (sender_psid) => {
         elements: [
           {
             media_type: "video",
-            url: "https://www.facebook.com/100086439574330/videos/1460481531129941",
+            url: "https://www.facebook.com/100086439574330/videos/548287560390373",
           },
         ],
       },
@@ -411,32 +385,6 @@ let handleChuyenKhoa = (sender_psid) => {
               },
             ],
           },
-          {
-            title: CkThanKinh[0],
-            subtitle: CkThanKinh[1],
-            image_url: CkThanKinh[2],
-            buttons: [
-              {
-                type: "web_url",
-                title: "Xem chi tiết",
-                url: CkThanKinh[3],
-                webview_height_ratio: "full",
-              },
-            ],
-          },
-          {
-            title: CkTieuHoa[0],
-            subtitle: CkTieuHoa[1],
-            image_url: CkTieuHoa[2],
-            buttons: [
-              {
-                type: "web_url",
-                title: "Xem chi tiết",
-                url: CkTieuHoa[3],
-                webview_height_ratio: "full",
-              },
-            ],
-          },
         ],
       },
     },
@@ -465,22 +413,6 @@ let handleBacSi = (sender_psid) => {
             ],
           },
           {
-            title: BsDaoHung[0],
-            subtitle: BsDaoHung[1],
-            image_url: BsDaoHung[2],
-            buttons: [
-              {
-                type: "web_url",
-                title: "Xem chi tiết",
-                url: BsDaoHung[3],
-                webview_height_ratio: "full",
-                // type: "postback",
-                //   title: "Ukm ;)",
-                //   payload: "yes",
-              },
-            ],
-          },
-          {
             title: BsBuiNgocAnh[0],
             subtitle: BsBuiNgocAnh[1],
             image_url: BsBuiNgocAnh[2],
@@ -493,19 +425,7 @@ let handleBacSi = (sender_psid) => {
               },
             ],
           },
-          {
-            title: BsDaoThiHuong[0],
-            subtitle: BsDaoThiHuong[1],
-            image_url: BsDaoThiHuong[2],
-            buttons: [
-              {
-                type: "web_url",
-                title: "Xem chi tiết",
-                url: BsDaoThiHuong[3],
-                webview_height_ratio: "full",
-              },
-            ],
-          },
+          
         ],
       },
     },

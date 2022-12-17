@@ -4,7 +4,6 @@ import chatbotService from "../services/chatbotService";
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 // import moment from "moment";
-
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 const GOOGLE_SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
 const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY;
@@ -12,7 +11,7 @@ const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY;
 const url_img1 = "https://bit.ly/Miku001";
 const url_img2 = "https://bit.ly/chibisutu";
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-// let postWebHook = (req, res) => {
+
 let postWebhook = (req, res) => {
   // Parse the request body from the POST
   console.log("=========Run postWebhook=======");
@@ -23,8 +22,7 @@ let postWebhook = (req, res) => {
     body.entry.forEach(function (entry) {
       // Gets the body of the webhook event
       let webhook_event = entry.messaging[0];
-      console.log(webhook_event);
-
+      console.log("webhook_event==> " + webhook_event+ " <== ");
       // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
       console.log("Sender PSID: " + sender_psid);
@@ -69,7 +67,6 @@ let getWebHook = (req, res) => {
     }
   }
 };
-//
 
  async function handleMessage(sender_psid, received_message) {
   let response;
@@ -103,8 +100,7 @@ let getWebHook = (req, res) => {
         
       default:
         response = {
-          // text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
-          text: "Chúng tôi đã nhận được tin nhắn của bạn và sẽ sớm trả lời. ",
+          text: `"${received_message.text}" chi bạn, gửi mình cái ảnh thử đi  :* `,
         };
         break;
     }
@@ -142,7 +138,7 @@ let getWebHook = (req, res) => {
             //   ],
             // },
             {
-              title: "Cảm ơn đã cung cấp thêm thông tin",
+              title: "Cảm ơn đã gửi ảnh",
               subtitle: "Chắc là vậy T_T",
               image_url: attachment_url,
               buttons: [
@@ -163,8 +159,6 @@ let getWebHook = (req, res) => {
       },
     };
   }
-
-  // Send the response message
   callSendAPI(sender_psid, response);
 }
 
@@ -173,19 +167,8 @@ async function handlePostback(sender_psid, received_postback) {
   let response;
   // Get the payload for the postback
   let payload = received_postback.payload;
-
   // Set the response based on the postback payload
-
   switch (payload) {
-    // case "yes":
-    //   response = { text: "OK <3" };
-    //   let response1 = chatbotService.sendImage(sender_psid);
-    //   await callSendAPI(sender_psid, response1);
-    //   break;
-
-    // case "no":
-    //   response = { text: "Vậy gửi lại đi nhấn chi nữa. ^_^" };
-    //   break;
 
     case "Restart":
     case "GET_STARTED":
@@ -213,7 +196,6 @@ async function handlePostback(sender_psid, received_postback) {
       response = { text: "Oop :), default " };
       break;
   }
-  // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 }
 
@@ -247,7 +229,6 @@ async function callSendAPI(sender_psid, response) {
 }
 
 let setupProfile = async (req, res) => {
-  //????????????????
   //call profile api facebook
 
   let request_body = {
@@ -291,7 +272,7 @@ let setupPersistent = async (req, res) => {
           },
           // {
           //   type: "web_url",
-          //   title: "Heroku",
+          //   title: "chatbotjs",
           //   url: "https://chatbotjs.onrender.com/",
           //   webview_height_ratio: "full",
           // },
@@ -388,7 +369,7 @@ let writeGoogleSheet = async (data) => {
     timeZone: "Asia/Ho_Chi_Minh",
   });
 
-  const format = "HH:mm DD/MM/YYYY";
+  // const format = "HH:mm DD/MM/YYYY";
   // let formatedDate = moment(time).format(format);
 
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
