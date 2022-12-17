@@ -35,7 +35,6 @@ let postWebhook = (req, res) => {
         handlePostback(sender_psid, webhook_event.postback);
       }
     });
-
     // Return a '200 OK' response to all events
     res.status(200).send("EVENT_RECEIVED");
   } else {
@@ -113,30 +112,6 @@ let getWebHook = (req, res) => {
         payload: {
           template_type: "generic",
           elements: [
-            // {
-            //   title: "Mày mới gửi cái hình này á hả? >.<",
-            //   subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
-            //   image_url: url_img1,
-            //   buttons: [
-            //     {
-            //       type: "postback",
-            //       title: "Ukm ;)",
-            //       payload: "yes",
-            //     },
-            //     {
-            //       type: "postback", //chạy vo ham handlePostBack
-            //       title: "Éo :v",
-            //       payload: "no",
-            //     },
-            //     {
-            //       type: "web_url",
-            //       url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
-            //       title: "Để lại danh tính ;)",
-            //       webview_height_ratio: "tall",
-            //       messenger_extensions: true, //mo tren tag do
-            //     },
-            //   ],
-            // },
             {
               title: "Cảm ơn đã gửi ảnh",
               subtitle: "Chắc là vậy T_T",
@@ -159,7 +134,7 @@ let getWebHook = (req, res) => {
       },
     };
   }
-  callSendAPI(sender_psid, response);
+  await chatbotService.callSendAPI(sender_psid, response);
 }
 
 // Handles messaging_postbacks events
@@ -196,51 +171,22 @@ async function handlePostback(sender_psid, received_postback) {
       response = { text: "Oop :), default " };
       break;
   }
-  callSendAPI(sender_psid, response);
+  chatbotService.callSendAPI(sender_psid, response);
 }
 
 // Sends response messages via the Send API
-async function callSendAPI(sender_psid, response) {
-  // Construct the message body
-  let request_body = {
-    recipient: {
-      id: sender_psid,
-    },
-    message: response,
-  };
-
-  await sendTypingOn(sender_psid);
-  // Send the HTTP request to the Messenger Platform
-  request(
-    {
-      uri: "https://graph.facebook.com/v2.6/me/messages",
-      qs: { access_token: PAGE_ACCESS_TOKEN },
-      method: "POST",
-      json: request_body,
-    },
-    (err, res, body) => {
-      if (!err) {
-        console.log("message sent!");
-      } else {
-        console.error("Unable to send message:" + err);
-      }
-    }
-  );
-}
 
 let setupProfile = async (req, res) => {
   //call profile api facebook
-
   let request_body = {
     get_started: { payload: "GET_STARTED" },
     whitelisted_domains: [
       "https://deploy-frontend-eta.vercel.app/",
-      "https://deploy-frontend-3krryll7m-hao759.vercel.app/home",
       "https://chatbotjs.onrender.com/",
     ],
   };
   // Send the HTTP request to the Messenger Platform
-  await request(
+  request(
     {
       uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
       qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -265,11 +211,6 @@ let setupPersistent = async (req, res) => {
         locale: "default",
         composer_input_disabled: false,
         call_to_actions: [
-          {
-            type: "postback",
-            title: "Mở Main_menu",
-            payload: "MAIN_MENU",
-          },
           // {
           //   type: "web_url",
           //   title: "chatbotjs",
@@ -331,7 +272,6 @@ let sendTypingOn = (sender_psid) => {
 
 let handleReserve = (req, res) => {
   let senderId = req.params.senderId;
-
   return res.render("webView.ejs", { senderId: senderId });
 };
 
@@ -349,7 +289,7 @@ let handlePostReserve = async (req, res) => {
       email: req.body.email,
       phoneNumber: req.body.phoneNumber,
     };
-    await callSendAPI(req.body.senderId, response1);
+    await chatbotService.callSendAPI(req.body.senderId, response1);
     await writeGoogleSheet(data);
     return res.status(200).json({
       message: "ok1",
@@ -385,7 +325,6 @@ let writeGoogleSheet = async (data) => {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   // adding / removing sheets
   // const newSheet =  doc.addSheet({ title: "hot new sheet!" });
-
   //append row
   await sheet.addRow({
     "Họ và tên": data.customerName,
@@ -423,7 +362,7 @@ let sendQuickreplies = async (sender_psid) => {
     message: messageSend,
   };
 
-  await sendTypingOn(sender_psid);
+  sendTypingOn(sender_psid);
   // Send the HTTP request to the Messenger Platform
   request(
     {

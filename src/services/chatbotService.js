@@ -12,10 +12,9 @@ const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
 
-
 const BsBuiNgocAnh = [
   "Phó ",
-  "Nguyên Trưởng ",
+  "Nguyên Chúa Tể Hội đồng quản trị",
   imgZed,
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
@@ -90,13 +89,10 @@ let handleGetStarted = (sender_psid) => {
       //   response = {
       //     text: `Hello bạn :), started rồi đó. Gửi mình cái ảnh hay text thử đi`,
       //   };
-      // callSendAPI(sender_psid, response);
-
-      // let response1 = sendImage(sender_psid);
       sendButtonTemplateHello(sender_psid);
 
-      let response2 = sendGIF();
-      await callSendAPI(sender_psid, response2);
+      let response2 = sendGIFAndIMG(Gif1);
+      callSendAPI(sender_psid, response2);
 
       sendVideo(sender_psid);
       resole("done");
@@ -158,47 +154,14 @@ let handleSendMenu = (sender_psid) => {
   return new Promise(async (resole, reject) => {
     try {
       let response = getMainMenuTemplate();
-      await callSendAPI(sender_psid, response);
+      callSendAPI(sender_psid, response);
       resole("done");
     } catch (error) {
       reject(error);
     }
   });
 };
-// let getStartedTemplete=()=>{
-//   let response = {
-//     attachment: {
-//       type: "template",
-//       payload: {
-//         template_type: "generic",
-//         elements: [
-//           {
-//             title: "Chao ban",
-//             subtitle: "Nhấn nút dưới á,gõ tao không hiểu đâu. T_T",
-//             image_url: url_img2,
-//             buttons: [
-//               {
-//                 type: "postback",
-//                 title: "Ukm ;)",
-//                 payload: "yes",
-//               },
-//               {
-//                 type: "postback", //chạy vo ham handlePostBack
-//                 title: "Éo :v",
-//                 payload: "no",
-//               },
-//               {
-//                 type: "postback",
-//                 title: "Đoán xem ",
-//                 payload: "maybe",
-//               },
-//             ],
-//           },
-//         ],
-//       },
-//     },
-//   };
-// }
+
 
 let getMainMenuTemplate = () => {
   let response = {
@@ -259,13 +222,13 @@ let getMainMenuTemplate = () => {
   return response;
 };
 
-let sendImage = () => {
+
+let sendGIFAndIMG = (data) => {
   let response = {
-    //  message: {
     attachment: {
       type: "image",
       payload: {
-        url: url_img2,
+        url: data,
         is_reusable: true,
       },
     },
@@ -273,36 +236,6 @@ let sendImage = () => {
   return response;
 };
 
-// let SendButton_Template = () => {
-//   let response = {
-//     attachment: {
-//       type: "template",
-//       payload: {
-//         template_type: "media",
-//         elements: [
-//           {
-//             media_type: "<video>",
-//             url: Gif1,
-//           },
-//         ],
-//       },
-//     },
-//   };
-//   return response;
-// };
-
-let sendGIF = () => {
-  let response = {
-    attachment: {
-      type: "image",
-      payload: {
-        url: Gif1,
-        is_reusable: true,
-      },
-    },
-  };
-  return response;
-};
 
 let sendVideo = (sender_psid) => {
   let message = {
@@ -437,7 +370,6 @@ module.exports = {
   handleGetStarted,
   callSendAPI,
   handleSendMenu,
-  sendImage,
   handleBacSi,
   handleBenhVien,
   sendVideo,
