@@ -91,7 +91,10 @@ let handleGetStarted = (sender_psid) => {
       let response2 = sendGIFAndIMG(Gif1);
       callSendAPI(sender_psid, response2);
 
-      sendVideo(sender_psid);
+      let linkVideo =
+        "https://www.facebook.com/100086439574330/videos/548287560390373";
+      sendVideo(sender_psid, linkVideo);
+
       resole("done");
     } catch (error) {
       reject(error);
@@ -106,7 +109,7 @@ let sendButtonTemplateHello = (sender_psid) => {
       type: "template",
       payload: {
         template_type: "button",
-        text: "Xin chào tôi có thể giúp gì bạn? 💥❄️🚨⚡",
+        text: "Xin chào. Gõ q thử đi ;) 💥❄️🚨⚡",
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
@@ -168,7 +171,7 @@ let getMainMenuTemplate = () => {
         elements: [
           {
             title: "Các chức năng chính",
-            subtitle: " Chọn để tìm hiểu thêm về app ",
+            subtitle: " Chọn để tìm hiểu thêm ",
             image_url: imgXemthem,
             buttons: [
               {
@@ -195,12 +198,12 @@ let getMainMenuTemplate = () => {
   return response;
 };
 
-let sendGIFAndIMG = (data) => {
+let sendGIFAndIMG = (link) => {
   let response = {
     attachment: {
       type: "image",
       payload: {
-        url: data,
+        url: link,
         is_reusable: true,
       },
     },
@@ -208,7 +211,7 @@ let sendGIFAndIMG = (data) => {
   return response;
 };
 
-let sendVideo = (sender_psid) => {
+let sendVideo = (sender_psid, linkVideo) => {
   let message = {
     attachment: {
       type: "template",
@@ -217,7 +220,7 @@ let sendVideo = (sender_psid) => {
         elements: [
           {
             media_type: "video",
-            url: "https://www.facebook.com/100086439574330/videos/548287560390373",
+            url: linkVideo,
           },
         ],
       },
