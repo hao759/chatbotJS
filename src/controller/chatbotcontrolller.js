@@ -12,9 +12,13 @@ const url_img1 = "https://bit.ly/Miku001";
 const url_img2 = "https://bit.ly/chibisutu";
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
+
+let bienDem=0;
+
 let postWebhook = (req, res) => {
   // Parse the request body from the POST
-  console.log("=========Run postWebhook=======");
+  bienDem+=1;
+  console.log("========Run postWebhook=====>"+bienDem+"<===");
   let body = req.body;
   // Check the webhook event is from a Page subscription
   if (body.object === "page") {
@@ -125,7 +129,7 @@ async function handleMessage(sender_psid, received_message) {
                 },
                 {
                   type: "postback",
-                  title: "Khởi động lại bot",
+                  title: "Khởi động lại ",
                   payload: "Restart",
                 },
               ],
@@ -218,7 +222,7 @@ let setupPersistent = async (req, res) => {
           // },
           {
             type: "postback",
-            title: "Khởi động lại bot",
+            title: "Khởi động lại ",
             payload: "Restart",
           },
         ],
