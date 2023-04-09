@@ -116,13 +116,13 @@ let sendButtonTemplateHello = (sender_psid) => {
             title: "💥Tìm hiểu thêm ",
             payload: "MAIN_MENU",
           },
-          {
-            type: "web_url",
-            url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
-            title: "Cần tư vấn ?",
-            webview_height_ratio: "tall",
-            messenger_extensions: true, //mo tren tag do
-          },
+          // {
+          //   type: "web_url",
+          //   url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
+          //   title: "Cần tư vấn ?",
+          //   webview_height_ratio: "tall",
+          //   messenger_extensions: true, //mo tren tag do
+          // },
         ],
       },
     },
