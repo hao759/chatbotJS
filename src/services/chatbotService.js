@@ -7,21 +7,21 @@ const url_img2 = "https://bit.ly/chibisutu";
 const imgXemthem =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1667626713/13-cach-chao-mung-trong-tieng-anh-3_mbsfqo.jpg";
 const imgZed =
-  "https://vcdn.kenhgamevn.com/wp-content/uploads/2021/11/18032623/238031.jpeg";
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1680991910/Clothing/eXKAttLmn-2a9f3d3a1bd30d41e1bd63d07c7b387f_lpvagv.jpg.jpg";
 const Gif1 =
   "https://res.cloudinary.com/dhzi2feeu/image/upload/v1664203319/anh-nen-dong-de-thuong_112053936_jzwopv.gif";
 
 const BsBuiNgocAnh = [
-  "Phó ",
-  "Nguyên Chúa Tể Hội đồng quản trị",
+  "Áo nữ 1 ",
+  "Áo nữ 1",
   imgZed,
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
 const BsNgocVy = [
-  "Katarina - Bông sen tử thần",
-  "Kata siêu phẩm",
-  "https://lol-skin.weblog.vc/img/wallpaper/splash/Katarina_9.jpg?1668538666",
+  "Áo nữ 2",
+  "Áo nữ 2",
+  "https://res.cloudinary.com/dhzi2feeu/image/upload/v1680991888/Clothing/4vB8veCye-ao-thun-local-brand-pyramid_arh6mf.webp.webp",
   "https://www.youtube.com/watch?v=5S01xsKjE0Y",
 ];
 
@@ -176,12 +176,12 @@ let getMainMenuTemplate = () => {
             buttons: [
               {
                 type: "postback",
-                title: "Gợi ý 1",
+                title: "Sản phẩm cho nữ",
                 payload: "BacSi",
               },
               {
                 type: "postback",
-                title: "Gợi ý 2",
+                title: "Sản phẩm cho nam",
                 payload: "BenhVien",
               },
               {
