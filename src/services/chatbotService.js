@@ -88,12 +88,12 @@ let handleGetStarted = (sender_psid) => {
       //   };
       sendButtonTemplateHello(sender_psid);
 
-      // let response2 = sendGIFAndIMG(Gif1);//video khi ban qua met moi
-      // callSendAPI(sender_psid, response2);
+      let response2 = sendGIFAndIMG(Gif1);
+      callSendAPI(sender_psid, response2);
 
-      let linkVideo =
-        "https://www.facebook.com/100086439574330/videos/548287560390373";
-      sendVideo(sender_psid, linkVideo);
+      // let linkVideo =
+      //   "https://www.facebook.com/100086439574330/videos/548287560390373";
+      // sendVideo(sender_psid, linkVideo);//video khi ban qua met moi
 
       resole("done");
     } catch (error) {
@@ -121,7 +121,7 @@ let sendButtonTemplateHello = (sender_psid) => {
             url: `${process.env.URL_WEBVIEW_ORDER}/${sender_psid}`,
             title: "Cần tư vấn ?",
             webview_height_ratio: "full",
-            messenger_extensions: true, //mo tren tag do
+            // messenger_extensions: true, //mo tren tag do
           },
         ],
       },
