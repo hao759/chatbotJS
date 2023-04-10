@@ -109,7 +109,7 @@ let sendButtonTemplateHello = (sender_psid) => {
       type: "template",
       payload: {
         template_type: "button",
-        text: "Xin chào. Gõ q thử đi ;) 💥❄️🚨⚡",
+        text: "Xin chào. Bạn cần gì ;) 💥❄️🚨⚡",
         buttons: [
           {
             type: "postback", //chạy vo ham handlePostBack
